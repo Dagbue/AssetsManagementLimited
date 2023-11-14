@@ -1,30 +1,115 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
-  <router-view/>
+  <div class="alpha">
+    <navigation-view/>
+    <a href="https://wa.me/15102569690?text="  target="_blank" class="whatsapp_float">
+      <i class='bx bxl-whatsapp'></i>
+    </a>
+
+    <router-view v-slot="{ Component }">
+      <transition name="route" mode="out-in">
+        <component :is="Component"></component>
+      </transition>
+    </router-view>
+  </div>
 </template>
 
+<script setup>
+import NavigationView from "@/components/baseComponents/NavigationView.vue";
+</script>
+
+
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+  cursor: pointer;
+  counter-reset: Serial;
+  font-family: 'Outfit', sans-serif;
+  background: hsla(0, 0%, 100%, 1.0);
+}
+a{
+  text-decoration: none;
+}
+input{
+  font-family: 'Outfit', sans-serif;
+}
+textarea{
+  font-family: 'Outfit', sans-serif;
+}
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+.route-enter-from {
+  opacity: 0;
+  transform: translateX(100px);
+}
+.route-enter-active {
+  transition: all 1s ease-out;
+}
+.route-leave-to {
+  opacity: 0;
+  transform: translateX(-100px);
+}
+.route-leave-active {
+  transition: all 1s ease-in;
+}
+
+.mobile-nav-enter-active,
+.mobile-nav-leave-active {
+  transition: 1s ease all;
+}
+
+.mobile-nav-enter-from,
+.mobile-nav-leave-to{
+  transform: translateX(-250px);
+}
+
+.mobile-nav-enter-to{
+  transform: translateX(0);
+}
+
+.whatsapp_float {
+  position: fixed;
+  width: 55px;
+  height: 55px;
+  bottom: 40px;
+  right: 40px;
+  background-color: #25d366;
+  color: #fff;
+  border-radius: 50px;
   text-align: center;
-  color: #2c3e50;
+  font-size: 30px;
+  z-index: 100;
 }
 
-nav {
-  padding: 30px;
+.bxl-whatsapp {
+  position: absolute;
+  top: 21%;
+  right: 22.5%;
 }
 
-nav a {
-  font-weight: bold;
-  color: #2c3e50;
+/* for mobile */
+@media screen and (max-width: 767px){
+  .whatsapp-icon {
+    margin-top: 10px;
+  }
+  .whatsapp_float {
+    width: 40px;
+    height: 40px;
+    bottom: 20px;
+    right: 10px;
+    font-size: 22px;
+  }
 }
 
-nav a.router-link-exact-active {
-  color: #42b983;
-}
 </style>
