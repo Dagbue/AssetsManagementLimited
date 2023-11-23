@@ -1,102 +1,109 @@
 <template>
   <div class="alpha">
 
+    <p class="section-1-header">Our Core Services</p>
+
+
     <div class="section-1">
 
       <div class="section-1-content">
-        <img src="https://www.interactivebrokers.com/images/web/crd-low-cost.svg" alt="crd-low-cost" class="section-1-content-image">
+<!--        <img src="https://www.interactivebrokers.com/images/web/crd-low-cost.svg" alt="crd-low-cost" class="section-1-content-image">-->
+        <img src="@/assets/wealth.png" alt="" class="section-1-content-image">
         <div class="section-1-content-text">
-          <p class="section-1-content-text-1">Retirement Planning</p>
+          <p class="section-1-content-text-1">Wealth Management</p>
           <p class="section-1-content-text-2">
-            Securing a stable financial future is invaluable. Instead of spending all your money today, prioritize
-            planning for a brighter tomorrow. We offer guidance on managing your finances today to ensure you can
-            confidently smile about your financial prospects in the future.
+            Wealth management is the ability of an advisor or advisory team to deliver a full range of financial
+            services and products to an affluent client in a consultative way.
           </p>
         </div>
       </div>
 
       <div class="section-1-content">
-        <img src="https://www.interactivebrokers.com/images/web/crd-global-access.svg" alt="crd-low-cost" class="section-1-content-image">
+<!--        <img src="https://www.interactivebrokers.com/images/web/crd-global-access.svg" alt="crd-low-cost" class="section-1-content-image">-->
+        <img src="@/assets/stocks.png" alt="" class="section-1-content-image">
         <div class="section-1-content-text">
-          <p class="section-1-content-text-1">Risk Management</p>
+          <p class="section-1-content-text-1">Stocks, Bonds & Mutual Funds</p>
           <p class="section-1-content-text-2">
-            Nowadays, numerous global investment firms can make choosing the right one a daunting task. Our risk
-            assessment service offers a thorough report and expert advice for your investment decisions.
+            While stocks typically are higher risk investments due to market volatility, they offer potentially high
+            returns. Let us help you manage your portfolio and offer financial advice.
           </p>
         </div>
       </div>
 
       <div class="section-1-content">
-        <img src="https://www.interactivebrokers.com/images/web/crd-technology.svg" alt="crd-low-cost" class="section-1-content-image">
+<!--        <img src="https://www.interactivebrokers.com/images/web/crd-technology.svg" alt="crd-low-cost" class="section-1-content-image">-->
+        <img src="@/assets/insurance-64.png" alt="" class="section-1-content-image">
         <div class="section-1-content-text">
-          <p class="section-1-content-text-1">Financial Market</p>
+          <p class="section-1-content-text-1">Insurance & Annuities</p>
           <p class="section-1-content-text-2">
-            Our primary investments are in cryptocurrency and forex, while our parent company also participates in
-            short-term projects overseas, including Agriculture and Oil & Gas partnerships.
+            We offer a variety of solutions from leading financial service providers, so you have many options when
+            deciding what type of annuity is right for you.
           </p>
         </div>
       </div>
 
       <div class="section-1-content">
-        <img src="https://www.interactivebrokers.com/images/web/crd-vault-icon.svg" alt="crd-low-cost" class="section-1-content-image">
+<!--        <img src="https://www.interactivebrokers.com/images/web/crd-vault-icon.svg" alt="crd-low-cost" class="section-1-content-image">-->
+        <img src="@/assets/coll.png" alt="" class="section-1-content-image">
         <div class="section-1-content-text">
-          <p class="section-1-content-text-1">Loan Services</p>
+          <p class="section-1-content-text-1">Retirement & College Savings</p>
           <p class="section-1-content-text-2">
-            A personal loan offers the chance to achieve your future aspirations by providing an unsecured loan option
-            with a repayment period of up to 60 months and a competitive monthly interest rate of just 1.083%.
+            Finding a balance with your money is a crucial part of personal finance. Saving for retirement does not
+            have to be mutually exclusive from saving for college.
           </p>
         </div>
       </div>
 
     </div>
 
-    <div class="section-2">
-      <p class="section-2-header">Award Winning Platform & Services</p>
+<!--    <div class="section-2">-->
+<!--      <p class="section-2-header">Award Winning Platform & Services</p>-->
 
-      <div class="section-2-content">
+<!--      <div class="section-2-content">-->
 
-        <div class="section-2-content-inner">
-            <img src="https://www.interactivebrokers.com/images/web/2022_sb-badge-1-professional-trading.png" alt="2022_sb-badge-1" class="section-2-image"/>
-          <p class="section-2-text-1">Professional Trading</p>
-          <p class="section-2-text-2">Offering of Investments</p>
-        </div>
+<!--        <div class="section-2-content-inner">-->
+<!--            <img src="https://www.interactivebrokers.com/images/web/2022_sb-badge-1-professional-trading.png" alt="2022_sb-badge-1" class="section-2-image"/>-->
+<!--          <p class="section-2-text-1">Professional Trading</p>-->
+<!--          <p class="section-2-text-2">Offering of Investments</p>-->
+<!--        </div>-->
 
-        <div class="section-2-content-inner">
-          <img src="https://www.interactivebrokers.com/images/web/awards-2021-Fintech-Awards-Winner-Badge.png" alt="2022_sb-badge-1" class="section-2-image"/>
-          <p class="section-2-text-1">Lifetime Achievement</p>
-          <p class="section-2-text-2">Best Paper Trading Platform</p>
-        </div>
+<!--        <div class="section-2-content-inner">-->
+<!--          <img src="https://www.interactivebrokers.com/images/web/awards-2021-Fintech-Awards-Winner-Badge.png" alt="2022_sb-badge-1" class="section-2-image"/>-->
+<!--          <p class="section-2-text-1">Lifetime Achievement</p>-->
+<!--          <p class="section-2-text-2">Best Paper Trading Platform</p>-->
+<!--        </div>-->
 
-        <div class="section-2-content-inner">
-          <img src="https://www.interactivebrokers.com/images/web/award-barrons-2023-best-online-broker.png" alt="2022_sb-badge-1" class="section-2-image"/>
-          <p class="section-2-text-1">#1 Best Online Broker</p>
-          <p class="section-2-text-2">5 out of 5 stars</p>
-        </div>
+<!--        <div class="section-2-content-inner">-->
+<!--          <img src="https://www.interactivebrokers.com/images/web/award-barrons-2023-best-online-broker.png" alt="2022_sb-badge-1" class="section-2-image"/>-->
+<!--          <p class="section-2-text-1">#1 Best Online Broker</p>-->
+<!--          <p class="section-2-text-2">5 out of 5 stars</p>-->
+<!--        </div>-->
 
-        <div class="section-2-content-inner">
-          <img src="https://www.interactivebrokers.com/images/web/awards-investopedia-2022-General.png" alt="2022_sb-badge-1" class="section-2-image"/>
-          <p class="section-2-text-1">4.6 out of 5 stars</p>
-          <p class="section-2-text-2">Overall</p>
-        </div>
+<!--        <div class="section-2-content-inner">-->
+<!--          <img src="https://www.interactivebrokers.com/images/web/awards-investopedia-2022-General.png" alt="2022_sb-badge-1" class="section-2-image"/>-->
+<!--          <p class="section-2-text-1">4.6 out of 5 stars</p>-->
+<!--          <p class="section-2-text-2">Overall</p>-->
+<!--        </div>-->
 
-        <div class="section-2-content-inner">
-          <img src="https://www.interactivebrokers.com/images/web/award-2023-brokerchooser.png" alt="2022_sb-badge-1" class="section-2-image"/>
-          <p class="section-2-text-1">Best Online Broker</p>
-        </div>
+<!--        <div class="section-2-content-inner">-->
+<!--          <img src="https://www.interactivebrokers.com/images/web/award-2023-brokerchooser.png" alt="2022_sb-badge-1" class="section-2-image"/>-->
+<!--          <p class="section-2-text-1">Best Online Broker</p>-->
+<!--        </div>-->
 
-      </div>
+<!--      </div>-->
 
 
 
-      <div class="btn-part" @click="onPostClick">
-        <p class="btn">Get Started</p>
-      </div>
-    </div>
+<!--      <div class="btn-part" @click="onPostClick">-->
+<!--        <p class="btn">Get Started</p>-->
+<!--      </div>-->
+<!--    </div>-->
 
   </div>
 </template>
 
 <script>
+
 
 export default {
   name: 'lowestCost',
@@ -115,6 +122,14 @@ export default {
   margin-left: 3%;
   margin-top: 2.5%;
 }
+.section-1-header{
+  text-align: center;
+  font-size: 1.7rem;
+  font-weight: 300;
+  color: #071333;
+  /*padding-bottom: 0.3rem;*/
+  margin-top: 2.5%;
+}
 .section-1-content{
   display: flex;
   justify-content: space-between;
@@ -126,18 +141,20 @@ export default {
   font-weight: 600;
   color: #071333;
   margin-top: 0;
-  font-size: 18px;
+  font-size: 17px;
   margin-bottom: 1%;
 }
 .section-1-content-text-2{
   margin: 0;
-  font-size: .875rem;
+  font-size: .9rem;
   color: #818a91;
   width: 90%;
+  line-height: 1.4;
+  padding-top: 1.5%;
 }
 .section-1-content-image{
-  height: 70px;
-  width: 70px;
+  height: 80px;
+  width: 80px;
   object-fit: cover;
   margin-right: 10px;
 }
@@ -232,17 +249,14 @@ export default {
     margin-left: auto;
     margin-right: auto;
   }
-
   .section-2-content-inner{
     margin-bottom: 4%;
   }
-
   .section-2-image{
     height: 200px;
     width: 200px;
     object-fit: cover;
   }
-
   .btn{
     width: 45%;
   }

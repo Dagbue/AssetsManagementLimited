@@ -5,6 +5,8 @@
     <div class="section-1">
       <img src="https://www.blockchain.com/static/img/home/products/app-ease@2x.png" alt="image" class="section-1-image">
 
+<!--      <img src="https://images.ctfassets.net/jg6lo9a2ukvr/5G2asKgLLIxwbjFojMFlq7/c323692e509916911ffd45006cbbab86/Desktop_App_04_Advanced.png?fm=avif" alt="image" class="section-1-image">-->
+
       <div class="section-1-content">
         <p class="section-1-content-header">Experience the Lowest Costs in the Industry</p>
         <div class="section-1-content-inner">
@@ -15,7 +17,7 @@
 
           <div class="separate">
             <i class='bx bx-check'></i>
-            <p>Company Name is a powerful suite of advanced trading technologies designed to help clients achieve best execution and maximize price improvement while minimizing market impact.</p>
+            <p>Assets Management Limited is a powerful suite of advanced trading technologies designed to help clients achieve best execution and maximize price improvement while minimizing market impact.</p>
           </div>
 
           <div class="separate">
@@ -76,8 +78,8 @@ export default {
   width: 35%;
   height: 100%;
   margin-right: 4%;
-  margin-top: 1.5%;
-  border-radius: 5px;
+  margin-top: 4%;
+  border-radius: 15px;
 }
 
 .section-1-content-header{

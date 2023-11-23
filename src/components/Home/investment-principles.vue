@@ -2,7 +2,7 @@
   <div class="section-2">
 
     <div class="text-box-2">
-      <h4 class="benefit-header">Benefits & Risks</h4>
+      <h4 class="benefit-header">Benefits of Investing with AML</h4>
       <p class="benefit-text">Advantages of Managed Funds The benefits of using managed funds include the ability to gain exposure to
          different asset classes and market sectors.</p>
       <ul class="list-alpha">

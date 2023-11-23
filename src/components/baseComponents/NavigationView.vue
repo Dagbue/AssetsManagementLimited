@@ -113,8 +113,8 @@ export default {
 }
 
 .logo {
-  width: 16%;
-  margin-left: 4%;
+  width: 15%;
+  margin-left: 4.5%;
   margin-top: 0.5%;
   margin-bottom: 0.5%;
 }

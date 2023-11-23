@@ -17,6 +17,49 @@
       />
 
     </div>
+
+    <div class="section-2">
+      <p class="section-2-header">Award Winning Platform & Services</p>
+
+      <div class="section-2-content">
+
+        <div class="section-2-content-inner">
+          <img src="https://www.interactivebrokers.com/images/web/2022_sb-badge-1-professional-trading.png" alt="2022_sb-badge-1" class="section-2-image"/>
+          <p class="section-2-text-1">Professional Trading</p>
+          <p class="section-2-text-2">Offering of Investments</p>
+        </div>
+
+        <div class="section-2-content-inner">
+          <img src="https://www.interactivebrokers.com/images/web/awards-2021-Fintech-Awards-Winner-Badge.png" alt="2022_sb-badge-1" class="section-2-image"/>
+          <p class="section-2-text-1">Lifetime Achievement</p>
+          <p class="section-2-text-2">Best Paper Trading Platform</p>
+        </div>
+
+        <div class="section-2-content-inner">
+          <img src="https://www.interactivebrokers.com/images/web/award-barrons-2023-best-online-broker.png" alt="2022_sb-badge-1" class="section-2-image"/>
+          <p class="section-2-text-1">#1 Best Online Broker</p>
+          <p class="section-2-text-2">5 out of 5 stars</p>
+        </div>
+
+        <div class="section-2-content-inner">
+          <img src="https://www.interactivebrokers.com/images/web/awards-investopedia-2022-General.png" alt="2022_sb-badge-1" class="section-2-image"/>
+          <p class="section-2-text-1">4.6 out of 5 stars</p>
+          <p class="section-2-text-2">Overall</p>
+        </div>
+
+        <div class="section-2-content-inner">
+          <img src="https://www.interactivebrokers.com/images/web/award-2023-brokerchooser.png" alt="2022_sb-badge-1" class="section-2-image"/>
+          <p class="section-2-text-1">Best Online Broker</p>
+        </div>
+
+      </div>
+
+
+
+      <div class="btn-part" @click="onPostClick">
+        <p class="btn">Get Started</p>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -31,30 +74,35 @@ export default {
       careerList: [
         {
           titleImage: "https://images.unsplash.com/photo-1522202195465-df8a5f26fa15?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
-          title: "Best In-Class Experience",
+          title: "Retirement Planning",
           description:
-              "Yes, we are very serious about this being easy for our users. Our designers focus every waking hour to get this right.",
+              "Securing a stable financial future is invaluable. Instead of spending all your money today, prioritize\n" +
+              "planning for a brighter tomorrow. We offer guidance on managing your finances today to ensure you can\n" +
+              "confidently smile about your financial prospects in the future.",
           subtitle: "Learn More",
         },
         {
           titleImage: "https://images.unsplash.com/photo-1525182008055-f88b95ff7980?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTR8fGxpdmUlMjBzdXBwb3J0fGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
-          title: "Live Support",
+          title: "Risk Management",
           description:
-              "Our Live support service is available 24 hours a day, 7 days a week. When you need us, we are always here for you.",
+              "Nowadays, numerous global investment firms can make choosing the right one a daunting task. Our risk\n" +
+              "assessment service offers a thorough report and expert advice for your investment decisions.",
           subtitle: "Learn More",
         },
         {
-          titleImage: "https://images.unsplash.com/photo-1461685265823-f8d5d0b08b9b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
-          title: "Premium Security",
+          titleImage: "https://images.unsplash.com/photo-1612178991541-b48cc8e92a4d?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          title: "Financial Market",
           description:
-              "Your personal information and trading activities are encrypted to ensure your safety and privacy. Your safety matters.",
+              "Our primary investments are in cryptocurrency and forex, while our parent company also participates in\n" +
+              "short-term projects overseas, including Agriculture and Oil & Gas partnerships.",
           subtitle: "Learn More",
         },
         {
           titleImage: "https://images.unsplash.com/photo-1637763723578-79a4ca9225f7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1171&q=80",
-          title: "Registered Company",
+          title: "Loan Services",
           description:
-              "Company Name is a fully registered company. The licensed trading firm has the FCA and PRA licenses.",
+              "A personal loan offers the chance to achieve your future aspirations by providing an unsecured loan option\n" +
+              "with a repayment period of up to 60 months and a competitive monthly interest rate of just 1.083%.",
           subtitle: "Learn More",
         },
       ],
@@ -66,7 +114,7 @@ export default {
 <style scoped>
 .career-choice-container {
 
-  padding: 0 8% 50px;
+  padding: 0 8% 0;
   /*background-color: rgba(242, 250, 253, 0.4);*/
   /*background-color: hsla(208, 7%, 46%, 0.15);*/
   color: #071333;
@@ -177,6 +225,55 @@ export default {
   outline: none;
 }
 
+.section-2-header{
+  text-align: center;
+  font-size: 1.7rem;
+  font-weight: 300;
+  color: #071333;
+  padding-bottom: 2rem;
+  margin-top: 5%;
+}
+.section-2-content{
+  display: flex;
+  justify-content: space-between;
+  margin-left: 12%;
+  margin-right: 12%;
+}
+
+.section-2-content-inner{
+  text-align: center;
+  color: #818a91;
+}
+
+.section-2-image{
+  height: 150px;
+  width: 150px;
+  object-fit: cover;
+}
+
+.btn{
+  margin-top: 3%;
+  margin-bottom: 3%;
+  color: #124DA8;
+  border: 1px solid #124DA8;
+  padding: 13px 10px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  width: 10%;
+  border-radius: 5px;
+}
+
+.btn:hover{
+  background-color: #D23535;
+  color: #ffff;
+  border: 1px solid #D23535;
+  -webkit-transition: all 0.35s ease;
+  transition: all 0.35s ease;
+  box-shadow: 0 0 5px rgba(20, 49, 89, 0.6);
+}
+
 @media (max-width: 990px) {
   .career-choice-header .one{
     font-size: 27px;
@@ -184,6 +281,25 @@ export default {
   .career-choice-header .two{
     font-size: 17px;
     width: 85%;
+  }
+  .section-2-header{
+    font-size: 1.5rem;
+  }
+  .section-2-content{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .section-2-content-inner{
+    margin-bottom: 4%;
+  }
+  .section-2-image{
+    height: 200px;
+    width: 200px;
+    object-fit: cover;
+  }
+  .btn{
+    width: 45%;
   }
 }
 
@@ -201,6 +317,14 @@ export default {
     width: unset;
     line-height: 20px;
     padding-bottom: 28px;
+  }
+  .section-2-image{
+    height: 140px;
+    width: 140px;
+    object-fit: cover;
+  }
+  .section-2-header{
+    font-size: 1.4rem;
   }
 }
 
