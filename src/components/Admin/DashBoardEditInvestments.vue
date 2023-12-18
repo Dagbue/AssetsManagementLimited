@@ -142,6 +142,26 @@ export default {
 
   },
   methods: {
+
+
+    previousPage() {
+      if (this.currentPage > 1) {
+        this.currentPage--;
+      }
+    },
+
+    nextPage() {
+      if (this.currentPage < this.totalPages) {
+        this.currentPage++;
+      }
+    },
+
+    goToPage(pageNumber) {
+      if (pageNumber > 0 && pageNumber <= this.totalPages) {
+        this.currentPage = pageNumber;
+      }
+    },
+
     async update1() {
       await setDoc(doc(db, "Investment" ,this.SelectEmail ), {
         profits: this.profits,

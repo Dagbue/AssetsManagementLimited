@@ -21,8 +21,6 @@ initializeApp(firebaseConfig)
 
 
 
-
-
 //init firebase auth
 const auth = getAuth();
 

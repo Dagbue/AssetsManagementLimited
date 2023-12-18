@@ -1,7 +1,7 @@
 <template>
   <div class="alpha">
 
-    <div class="first-section" @click="onPostClick2">
+    <div class="first-section" >
       <div>
         <img src="@/assets/select2.png" alt="icon" class="icon">
       </div>

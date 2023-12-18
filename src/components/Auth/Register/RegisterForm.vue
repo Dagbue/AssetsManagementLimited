@@ -456,38 +456,38 @@ export default {
               console.log('saved')
             });
 
-        await setDoc(doc(db, auth.currentUser.email, "UserDemo"), {
-          email: email.value,
-          password: password.value,
-          firstName: firstName.value,
-          lastName: lastName.value,
-          phoneNumber: phoneNumber.value,
-          country: country.value,
-          referral: referral.value,
-          deposit: deposit.value,
-          withdrawal: withdrawal.value,
-          bonus: bonus.value,
-          bonusMain: bonusMain.value,
-          profits: profits.value,
-          createdAt: serverTimestamp()
-        },{merge: true})
-            .then(() => {
-              console.log('saved')
-            });
-
-        await setDoc(doc(db, "listOfUsersDemo", auth.currentUser.email), {
-          email: email.value,
-          password: password.value,
-          firstName: firstName.value,
-          lastName: lastName.value,
-          referral: referral.value,
-          phoneNumber: phoneNumber.value,
-          country: country.value,
-          createdAt: serverTimestamp()
-        },{merge: true})
-            .then(() => {
-              console.log('saved')
-            });
+        // await setDoc(doc(db, auth.currentUser.email, "UserDemo"), {
+        //   email: email.value,
+        //   password: password.value,
+        //   firstName: firstName.value,
+        //   lastName: lastName.value,
+        //   phoneNumber: phoneNumber.value,
+        //   country: country.value,
+        //   referral: referral.value,
+        //   deposit: deposit.value,
+        //   withdrawal: withdrawal.value,
+        //   bonus: bonus.value,
+        //   bonusMain: bonusMain.value,
+        //   profits: profits.value,
+        //   createdAt: serverTimestamp()
+        // },{merge: true})
+        //     .then(() => {
+        //       console.log('saved')
+        //     });
+        //
+        // await setDoc(doc(db, "listOfUsersDemo", auth.currentUser.email), {
+        //   email: email.value,
+        //   password: password.value,
+        //   firstName: firstName.value,
+        //   lastName: lastName.value,
+        //   referral: referral.value,
+        //   phoneNumber: phoneNumber.value,
+        //   country: country.value,
+        //   createdAt: serverTimestamp()
+        // },{merge: true})
+        //     .then(() => {
+        //       console.log('saved')
+        //     });
 
         await Swal.fire({
           icon: 'success',
