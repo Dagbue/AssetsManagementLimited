@@ -23,7 +23,7 @@
             <p class="text-5">Wallet Address: bc1q2nxm4jrpj7wpu6ssw6m3ajd6pqara36udhcamq</p>
           </div>
 
-          <div v-if="this.selectedItem === 'Ethereum' ">
+          <div v-if="this.selectedItem === 'ethereum' ">
             <p class="text-4">Wallet Name: {{selectedItem}}</p>
             <p class="text-5">Wallet Address: 0x0dD4E954D5363b5da3F5AB01559d076ebBe4D0bA</p>
           </div>
@@ -37,7 +37,12 @@
 
 
         <br/>
-        <button>Copy</button>
+
+        <button v-if="this.selectedItem === 'bitcoin' " @click="copyToClipboard('bc1q2nxm4jrpj7wpu6ssw6m3ajd6pqara36udhcamq')">Copy</button>
+
+        <button v-if="this.selectedItem === 'ethereum' " @click="copyToClipboard('0x0dD4E954D5363b5da3F5AB01559d076ebBe4D0bA')">Copy</button>
+
+        <button v-if="this.selectedItem === 'USDT' " @click="copyToClipboard('0x0dD4E954D5363b5da3F5AB01559d076ebBe4D0bA')">Copy</button>
 
       </div>
 
@@ -67,6 +72,20 @@ export default {
         text: 'Deposit Request Sent!',
       });
     },
+
+    copyToClipboard(content) {
+      const textarea = document.createElement('textarea')
+      textarea.value = content
+      document.body.appendChild(textarea)
+      textarea.select()
+      document.execCommand('copy')
+      document.body.removeChild(textarea)
+      Swal.fire({
+        icon: 'success',
+        title: 'Success',
+        text: 'Copied To Clipboard',
+      });
+    }
   },
 }
 </script>
