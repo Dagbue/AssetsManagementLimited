@@ -20,12 +20,17 @@
           <br/>
           <div v-if="this.selectedItem === 'bitcoin' ">
             <p class="text-4">Wallet Name: {{selectedItem}}</p>
-            <p class="text-5">Wallet Address: 3CDA5QN6vZHfUFR3LE5TiEhnbDYVeuKxmc</p>
+            <p class="text-5">Wallet Address: 0x0dD4E954D5363b5da3F5AB01559d076ebBe4D0bA</p>
           </div>
 
           <div v-if="this.selectedItem === 'Ethereum' ">
             <p class="text-4">Wallet Name: {{selectedItem}}</p>
             <p class="text-5">Wallet Address: 0x8ca10304c0E398Cb4ecc52053120Dd28258A1c61</p>
+          </div>
+
+          <div v-if="this.selectedItem === 'USDT' ">
+            <p class="text-4">Wallet Name: {{selectedItem}}</p>
+            <p class="text-5">Wallet Address: 0x0dD4E954D5363b5da3F5AB01559d076ebBe4D0bA</p>
           </div>
 
         </div>
