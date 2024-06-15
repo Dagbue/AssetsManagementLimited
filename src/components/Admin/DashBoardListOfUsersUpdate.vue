@@ -20,6 +20,7 @@
 
 
     <div style="color: white;" class="section-2-alpha">
+
       <div class="lawrence">
         <p class="text-1">UPDATE USER INFO</p>
         <p class="btn-2" @click="back">Back</p>

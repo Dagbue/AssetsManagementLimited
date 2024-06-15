@@ -129,7 +129,7 @@ export default {
       contacts: [],
       SelectEmail: "",
       currentPage: 1,
-      itemsPerPage: 9,
+      itemsPerPage: 8,
       accStatus: "verified",
       searchQuery: "", // Data property to hold the search input
       dialogIsVisible: false,

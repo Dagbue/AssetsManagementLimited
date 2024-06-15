@@ -1324,14 +1324,6 @@ export default {
           ) : this.readUserTrade.trades;
       return Math.ceil(filteredTrades.length / this.itemsPerPage);
     },
-    // paginatedItems() {
-    //   const startIndex = (this.currentPage - 1) * this.itemsPerPage;
-    //   const endIndex = startIndex + this.itemsPerPage;
-    //   return this.readUserTrade.trades.slice(startIndex, endIndex);
-    // },
-    // totalPages() {
-    //   return Math.ceil(this.readUserTrade.trades.length / this.itemsPerPage);
-    // },
     UserInfo() {
       return StoreUtils.rootGetters(StoreUtils.getters.auth.getUserInfo)
     },

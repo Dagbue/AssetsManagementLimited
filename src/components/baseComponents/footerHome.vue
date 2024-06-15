@@ -30,7 +30,7 @@
             <a  class="footer-link" @click="onPostClick3">Register</a>
             <a  class="footer-link" @click="onPostClick4">F.A.Q</a>
             <a  class="footer-link" @click="onPostClick5">Contacts</a>
-            <a href="https://find-and-update.company-information.service.gov.uk/company/11557864" class="footer-link">Certifications</a>
+            <a @click="showDialog" class="footer-link">Certification</a>
           </div>
 
           <div class=" stay-connected">
@@ -72,17 +72,32 @@
         © 2018 Assets Management Limited | All Rights Reserved
       </p>
     </div>
+    <certificate-modal @close="hideDialog" v-if="dialogIsVisible" />
   </div>
 </template>
 
 <script>
 
-// import BitcoinPrices from "@/components/baseComponents/bitcoinPrices.vue";
+
+
+import CertificateModal from "@/components/baseComponents/modal/CertificateModal.vue";
 
 export default {
   name: 'footerHome',
-  // components: {BitcoinPrices},
+  components: {CertificateModal},
+
+  data() {
+    return {
+      dialogIsVisible: false,
+    };
+  },
   methods: {
+    hideDialog() {
+      this.dialogIsVisible = false;
+    },
+    showDialog() {
+      this.dialogIsVisible = true;
+    },
     onPostClick() {
       this.$router.push("/");
       window.scrollTo(0, 0);
