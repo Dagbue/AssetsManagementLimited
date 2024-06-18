@@ -73,9 +73,9 @@ dialog {
 @media (max-width: 500px) {
   dialog {
     top: 10vh;
-    width: 28rem;
-    height: 40rem;
-    left: calc(50% - 14rem);
+    width: 25rem;
+    height: 35rem;
+    left: calc(50% - 12rem);
   }
   h3{
     font-size: 20px;
