@@ -49,8 +49,8 @@
             <th>BTC Balance</th>
             <th>Invested Amount</th>
             <th>Withdrawn Amount</th>
-            <th>Activation Code</th>
-            <th>2FA Code</th>
+            <th>Profit</th>
+            <th>Bonus</th>
             <th>Date Created</th>
             <th>Status</th>
             <th>Action</th>
@@ -81,13 +81,8 @@
             <td data-label="BTC Balance">{{child.btcBalance | formatAmount2}}</td>
             <td data-label="Invested Amount">{{child.totalDepositedAmount | formatAmount2}}</td>
             <td data-label="Withdrawn Amount">{{child.totalWithdrawals | formatAmount2}}</td>
-            <td data-label="Activation Code">{{child.twoFactorAuthenticationCode}}</td>
-            <td data-label="2FA Code">
-              <div>
-                <p v-if="child.twoFactorAuthenticationCode">Set</p>
-                <p v-else>Not Set</p>
-              </div>
-            </td>
+            <td data-label="Profit">{{child.totalProfits}}</td>
+            <td data-label="Bonus">{{child.bonus}}</td>
             <td data-label="Date Created">{{child.createdAt | formatDate}}</td>
             <td data-label="Status">{{child.userStatus}}</td>
             <td data-label="Action">

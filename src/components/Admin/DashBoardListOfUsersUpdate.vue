@@ -88,15 +88,21 @@
           <div class="separate">
 
             <div class="space">
-              <label>Total Profits</label>
+              <label>Profits</label>
               <input type="number" v-model="totalProfits"  class="form-input"/>
             </div>
 
+
             <div class="space">
-              <label>Loan Requested</label>
-              <input type="text" v-model="totalLoanRequested"  class="form-input"/>
+              <label>Bonus</label>
+              <input type="number" v-model="totalBonus"  class="form-input"/>
             </div>
 
+          </div>
+
+          <div style="margin-left: 3%" class="space">
+            <label>Loan Requested</label>
+            <input type="text" v-model="totalLoanRequested"  class="form-input"/>
           </div>
 
           <div class="separate">
@@ -209,6 +215,7 @@ export default {
       loanPrepaymentFee: "",
       loanPlan:"",
       loanStatus: "",
+      totalBonus: "",
 
 
       createdAt: "",
@@ -256,6 +263,7 @@ export default {
       this.userStatus = this.readUserById.user.userStatus;
 
       this.totalProfits = this.readUserById.user.totalProfits;
+      this.totalBonus = this.readUserById.user.bonus;
       this.totalLoanRequested = this.readUserById.user.totalLoanRequested;
       this.loanPrepaymentFee = this.readUserById.user.loanPrepaymentFee;
       this.loanPlan = this.readUserById.user.loanPlan;
@@ -276,6 +284,7 @@ export default {
         totalWithdrawals: this.totalWithdrawals,
         twoFactorAuthenticationCode: this.twoFactorAuthenticationCode,
         totalProfits : this.totalProfits,
+        bonus : this.totalBonus,
         totalLoanRequested : this.totalLoanRequested,
         loanPrepaymentFee : this.loanPrepaymentFee,
         loanPlan : this.loanPlan,

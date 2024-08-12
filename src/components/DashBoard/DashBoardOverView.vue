@@ -128,9 +128,9 @@
 
         <div class="section-3-content">
           <div class="content-1">
-            <p class="content-1-text-1">Currency</p>
+            <p class="content-1-text-1">Bonus</p>
             <div>
-              <p class="content-1-text-2">Euros</p>
+              <p class="content-1-text-2">£ {{UserDetails.user.bonus | formatAmount2}}</p>
             </div>
           </div>
           <div class="content-2">
@@ -1146,7 +1146,6 @@
         <base-button :loading="loading" style="  background-color: #5d78ff;border: 1px solid #5d78ff;">Place Trade </base-button>
       </form>
     </div>
-
 
     <div class="last">
       <div class="body">
