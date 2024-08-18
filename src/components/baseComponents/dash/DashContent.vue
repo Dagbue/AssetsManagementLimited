@@ -12,7 +12,11 @@
           <div class="vl"></div>
           <img v-if="userInfo.displayPicture === ''" src="@/assets/Avatar.svg" alt="logo"  class="avatar"/>
           <img v-else :src="userInfo.displayPicture" alt="displayPicture"  class="displayPicture"/>
-          <p class="profile-name">{{this.userFirstName | titleCase}} {{this.userLastName | titleCase}}</p>
+          <div>
+            <p v-if="this.userInfo.accountType === 'Single'" class="profile-name">{{this.userFirstName | titleCase}} {{this.userLastName | titleCase}}</p>
+            <p v-else style="color: #ffffff; float: left;">{{userInfo.accountType}} Account</p>
+          </div>
+
         </div>
 
       </div>

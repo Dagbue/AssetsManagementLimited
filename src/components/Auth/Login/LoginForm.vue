@@ -124,17 +124,9 @@ form {
   border-radius: 8px;
 }
 
-.alpha{
-  //background-color: #F6F6F7;
-  //background-image: url(https://www.interactivebrokers.com/images/web/why-ibkr-global-market-access-background.png), linear-gradient(#F6F6F7 17.14%, #DFE2E7 95.69%);
-  //background-repeat: no-repeat;
-  //background-size: 60%, cover;
-  //background-position: bottom right, top left;
-  //padding-bottom: 8.5%;
-}
 
 .company-logo{
-  width: 35%;
+  width: 30%;
   margin-top: 8%;
   margin-bottom: 1%;
 }
@@ -207,8 +199,7 @@ form {
   font-size: 16px;
   line-height: 24px;
   letter-spacing: -0.1px;
-  padding: 12px 16px;
-  height: 48px;
+  padding: 8px 16px;
   border-radius: 8px;
   color: var(--black-color);
   /*border: 1px solid #e4e8ee;*/
@@ -273,7 +264,6 @@ form {
 }
 
 .forgot-password {
-  /*padding-left: 26%;*/
   text-decoration: none;
   color: #ffffff;
   font-size: 15px;
@@ -330,8 +320,8 @@ button{
   margin-top: 10%;
 }
 .space{
-  padding-top: 11px;
-  padding-bottom: 11px;
+  padding-top: 8px;
+  padding-bottom: 8px;
   padding-right: 10px;
   border: 1px solid #d0d5dd;
   border-left-style: none;
@@ -342,7 +332,7 @@ button{
 .input-form-1{
   order: 1;
   width: 100%;
-  padding: 13px 20px;
+  padding: 10px 20px;
   margin: 8px 0;
   display: inline-block;
   box-sizing: border-box;
@@ -352,8 +342,6 @@ input {
   border: 1px solid #D0D5DD;
   border-radius: 8px;
   -webkit-transition: 0.3s;
-  padding-top: 12px;
-  padding-bottom: 12px;
   transition: 0.3s;
   outline: none;
   color: var(--black-color);

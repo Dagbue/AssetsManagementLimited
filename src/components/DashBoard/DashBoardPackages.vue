@@ -317,12 +317,9 @@ export default {
 }
 
 .btn p:hover{
-  background-color: #D23535;
-  color: #ffffffff;
-  border: 1px solid #D23535;
+  border: 1px solid #3C4A57FF;
   -webkit-transition: all 0.35s ease;
   transition: all 0.35s ease;
-  box-shadow: 0 0 5px rgba(20, 49, 89, 0.6);
 }
 
 .top{

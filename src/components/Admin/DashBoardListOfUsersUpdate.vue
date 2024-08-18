@@ -1,23 +1,6 @@
 <template>
   <div class="alpha">
 
-<!--    <div style="color: white;" class="section-1-alpha">-->
-<!--      <p class="text-1">User Profile</p>-->
-<!--      <hr/>-->
-<!--      <div class="section-1-part-1">-->
-<!--        <img src="@/assets/Avatar.svg" alt="avatar" class="avatar" />-->
-<!--        <div>-->
-<!--          <p>User Name</p>-->
-<!--          <p>User Email</p>-->
-<!--        </div>-->
-<!--      </div>-->
-
-<!--      <div class="referral-part">-->
-<!--        <input type="text" v-model="reflink" class="link-box"/>-->
-<!--        <button class="link-button">Copy Link</button>-->
-<!--      </div>-->
-<!--    </div>-->
-
 
     <div style="color: white;" class="section-2-alpha">
 
@@ -100,10 +83,56 @@
 
           </div>
 
-          <div style="margin-left: 3%" class="space">
-            <label>Loan Requested</label>
-            <input type="text" v-model="totalLoanRequested"  class="form-input"/>
+          <div class="separate">
+            <div  class="space">
+              <label>Loan Requested</label>
+              <input type="text" v-model="totalLoanRequested"  class="form-input"/>
+            </div>
+
+            <div class="space">
+              <label>Account Type</label>
+              <p class="edit">current type : {{accountType}}</p>
+              <!--              <input type="text" v-model="userStatus" required="required" class="form-input"/>-->
+              <select v-model="accountType"  class="form-input">
+                <option selected disabled value="">select account Type</option>
+                <option :value="null" disabled>select account Type</option>
+                <option value="Joint">Joint</option>
+                <option value="Single">Single</option>
+              </select>
+            </div>
           </div>
+
+          <div v-show="this.readUserById.user.accountType === 'Joint'">
+            <div class="separate">
+
+              <div class="space">
+                <label>Account2 FirstName</label>
+                <input type="number" v-model="account2FirstName"  class="form-input"/>
+              </div>
+
+              <div class="space">
+                <label>Account2 LastName</label>
+                <input type="number" v-model="account2LastName"  class="form-input"/>
+              </div>
+
+            </div>
+
+            <div class="separate">
+
+              <div class="space">
+                <label>Account2 Email</label>
+                <input type="number" v-model="account2Email"  class="form-input"/>
+              </div>
+
+
+              <div class="space">
+                <label>Account2 PhoneNumber</label>
+                <input type="number" v-model="account2PhoneNumber"  class="form-input"/>
+              </div>
+
+            </div>
+          </div>
+
 
           <div class="separate">
 
@@ -163,12 +192,6 @@
           </div>
 
 
-<!--            <div style="margin-left: 3%;" class="space">-->
-<!--              <label>status</label>-->
-<!--              <input type="text" v-model="userStatus" required="required" class="form-input"/>-->
-<!--            </div>-->
-
-
 
           <div class="btn-alpha">
 <!--            <p class="btn">Update Details</p>-->
@@ -216,6 +239,12 @@ export default {
       loanPlan:"",
       loanStatus: "",
       totalBonus: "",
+
+      accountType: "",
+      account2FirstName: "",
+      account2LastName: "",
+      account2Email:"",
+      account2PhoneNumber: "",
 
 
       createdAt: "",
@@ -268,6 +297,12 @@ export default {
       this.loanPrepaymentFee = this.readUserById.user.loanPrepaymentFee;
       this.loanPlan = this.readUserById.user.loanPlan;
       this.loanStatus = this.readUserById.user.loanStatus;
+
+      this.accountType = this.readUserById.user.accountType;
+      this.account2FirstName = this.readUserById.user.account2FirstName;
+      this.account2LastName = this.readUserById.user.account2LastName;
+      this.account2Email = this.readUserById.user.account2Email;
+      this.account2PhoneNumber = this.readUserById.user.account2PhoneNumber;
     },
 
     async updateDetails() {
@@ -291,6 +326,12 @@ export default {
         loanStatus : this.loanStatus,
         // createdAt: this.createdAt,
         userStatus: this.userStatus,
+
+        accountType : this.accountType,
+        account2FirstName : this.account2FirstName,
+        account2LastName : this.account2LastName,
+        account2Email : this.account2Email,
+        account2PhoneNumber : this.account2PhoneNumber,
       })
       await StoreUtils.dispatch(StoreUtils.actions.auth.allUsers)
       await StoreUtils.dispatch(StoreUtils.actions.auth.readReadUserById, {

@@ -68,6 +68,52 @@
 
           </div>
 
+          <div v-show="this.userInfo.accountType === 'Joint'">
+            <div class="separate">
+
+              <div class="space">
+                <label>Account2 FirstName</label>
+                <input type="text" v-model="account2FirstName"  class="form-input"/>
+              </div>
+
+              <div class="space">
+                <label>Account2 LastName</label>
+                <input type="text" v-model="account2LastName"  class="form-input"/>
+              </div>
+
+            </div>
+
+            <div class="separate">
+
+              <div class="space">
+                <label>Account2 Email</label>
+                <input type="text" v-model="account2Email"  class="form-input"/>
+              </div>
+
+              <div class="space">
+                <label>Account2 PhoneNumber</label>
+                <input type="text" v-model="account2PhoneNumber"  class="form-input"/>
+              </div>
+
+            </div>
+
+            <div class="separate">
+
+            <div class="space" >
+                <label>Account2 Address</label>
+                <input type="text" v-model="account2Address"  class="form-input"/>
+            </div>
+
+              <div class="space" >
+                <label>Account Type</label>
+                <input type="text" v-model="accountType" readonly  class="form-input"/>
+              </div>
+
+            </div>
+
+          </div>
+
+
           <div class="btn-alpha">
 <!--            <p class="btn">Update Details</p>-->
             <base-button
@@ -80,6 +126,8 @@
 
       </div>
     </div>
+
+
 
   </div>
 </template>
@@ -109,6 +157,12 @@ export default {
       reflink: "https://assetsmanagementlimited.com/register",
       userId: "",
       userInfo: "",
+      account2FirstName: "",
+      account2LastName: "",
+      account2Email: "",
+      account2PhoneNumber: "",
+      account2Address: "",
+      accountType: "",
     }
   },
   computed:{
@@ -143,6 +197,12 @@ export default {
       this.country = this.userInfo.country;
       this.phoneNumber = this.userInfo.phoneNumber;
       this.address = this.userInfo.address;
+      this.account2FirstName = this.userInfo.account2FirstName;
+      this.account2LastName = this.userInfo.account2LastName;
+      this.account2Email = this.userInfo.account2Email;
+      this.account2Address = this.userInfo.account2Address;
+      this.account2PhoneNumber = this.userInfo.account2PhoneNumber;
+      this.accountType = this.userInfo.accountType;
     },
 
     async updateDetails() {
@@ -153,7 +213,13 @@ export default {
         email: this.email,
         phoneNumber: this.phoneNumber,
         country: this.country,
-        address: this.address
+        address: this.address,
+        account2FirstName : this.account2FirstName,
+        account2LastName : this.account2LastName,
+        account2Email : this.account2Email,
+        account2Address : this.account2Address,
+        account2PhoneNumber : this.account2PhoneNumber,
+        accountType : this.accountType,
       });
       await router.push("/over-view")
     }

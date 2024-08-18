@@ -320,9 +320,7 @@ h2{
   font-size: 20px;
 }
 
-.empty-state{
-  width: 28%;
-}
+
 
 .empty-state-container{
   text-align: center;

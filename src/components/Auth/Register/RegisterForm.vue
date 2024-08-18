@@ -3,11 +3,11 @@
     <form class="signUp" @submit.prevent="createUser">
       <div class="wrapper">
         <div class="headline">
-          <router-link to="/">
-            <img src="@/assets/companylogo.png" alt="logo" class="company-logo">
-          </router-link>
+<!--          <router-link to="/">-->
+<!--            <img src="@/assets/companylogo.png" alt="logo" class="company-logo">-->
+<!--          </router-link>-->
           <h2>
-            Create New <br/> <span class="header-span">Assets Management Limited</span> <br/> Account
+            Create a New <br/> <span class="header-span">Assets Management Limited</span> Account
           </h2>
           <p>
             NB: Investors are not allowed to keep their trade account dormant 2
@@ -19,32 +19,32 @@
 
             <div class="group">
               <div class="form-group">
-                <input type="text" placeholder="First Name" required name="firstName" v-model="model.firstName" />
+                <input type="text" placeholder="First Name"  name="firstName" v-model="model.firstName" />
               </div>
               <div class="form-group">
-                <input type="text" placeholder="Last Name" required name="LastName" v-model="model.lastName" />
+                <input type="text" placeholder="Last Name"  name="LastName" v-model="model.lastName" />
               </div>
             </div>
 
             <div class="group">
               <div class="form-group">
-                <input type="email" placeholder="Email" required name="email" v-model="model.email" />
+                <input type="email" placeholder="Email"  name="email" v-model="model.email" />
               </div>
               <div class="form-group">
-                <input type="text" placeholder="PhoneNumber" required name="phoneNumber" v-model="model.phoneNumber"/>
+                <input type="text" placeholder="PhoneNumber"  name="phoneNumber" v-model="model.phoneNumber"/>
               </div>
             </div>
 
               <div class="has-addons">
-                <input v-if="showPassword2" v-model="model.password"  required="required" type="text"  class="input-form-1 password"   placeholder="Password"   />
-                <input v-else type="password" v-model="model.password" required="required"  class="input-form-1 password"   placeholder="Password"   >
+                <input v-if="showPassword2" v-model="model.password"   type="text"  class="input-form-1 password"   placeholder="Password"   />
+                <input v-else type="password" v-model="model.password"  class="input-form-1 password"   placeholder="Password"   >
                 <div class="space" @click="toggleShow2">
                   <i class="fas" :class="{ 'fa-eye-slash': showPassword2, 'fa-eye': !showPassword2 }" ></i>
                 </div>
               </div>
               <div class="has-addons">
-                <input v-if="showPassword2"   required="required" type="text"  class="input-form-1 password"   placeholder="Confirm Password"   />
-                <input v-else type="password"  required="required"  class="input-form-1 password"   placeholder="Confirm Password"   >
+                <input v-if="showPassword2"    type="text"  class="input-form-1 password"   placeholder="Confirm Password"   />
+                <input v-else type="password"   class="input-form-1 password"   placeholder="Confirm Password"   >
                 <div class="space" @click="toggleShow2">
                   <i class="fas" :class="{ 'fa-eye-slash': showPassword2, 'fa-eye': !showPassword2 }" ></i>
                 </div>
@@ -60,7 +60,6 @@
                   accept="image/*"
                   ref="file"
                   placeholder="Identification Card (Upload ID card for verification)"
-                  required
               />
             </div>
 
@@ -74,7 +73,6 @@
                   accept="image/*"
                   ref="file2"
                   placeholder="Identification Card (Upload ID card for verification)"
-                  required
               />
             </div>
 
@@ -82,7 +80,7 @@
 <!--              <input type="text" placeholder="Referral's Email (Optional)"  name="Referral" v-model="referral"/>-->
 <!--            </div>-->
             <div class="form-group">
-              <select v-model="model.country" name="country" id="country" required >
+              <select v-model="model.country" name="country" id="country" >
                 <option :value="null" disabled>Choose Country</option>
                 <option value="Afghanistan">Afghanistan</option>
                 <option value="Albania">Albania</option>
@@ -326,6 +324,36 @@
               </select>
             </div>
 
+            <div class="form-group">
+              <label style="color: #FFFFFF;" class="id">Select Account Type</label>
+              <select v-model="accountType" name="accountType" id="accountType" >
+                <option :value="null" disabled>Account Type</option>
+                <option value="Single">Single Account</option>
+                <option value="Joint">Joint Account</option>
+              </select>
+            </div>
+
+            <div v-show="this.accountType === 'Joint'">
+              <div class="group">
+                <div class="form-group">
+                  <input type="text" placeholder="Account 2 First Name"  name="account2FirstName" v-model="account2FirstName" />
+                </div>
+                <div class="form-group">
+                  <input type="text" placeholder="Account 2 Last Name"  name="account2LastName" v-model="account2LastName" />
+                </div>
+              </div>
+
+              <div class="group">
+                <div class="form-group">
+                  <input type="email" placeholder="Account 2 Email"  name="account2Email" v-model="account2Email" />
+                </div>
+                <div class="form-group">
+                  <input type="text" placeholder="Account 2 PhoneNumber"  name="account2PhoneNumber" v-model="account2PhoneNumber"/>
+                </div>
+              </div>
+            </div>
+
+
             <div class="form-group-2">
               <input
                   type="checkbox"
@@ -333,7 +361,6 @@
                   id="remember-me"
                   class="checkbox"
                   name="RememberMe"
-                  required
               />
               <label for="remember-me" class="checkbox-text"
               >I Agree to Company Name
@@ -390,6 +417,11 @@ export default {
   data() {
     return {
       model: new AuthenticationRequest().createUser,
+      accountType: "",
+      account2FirstName: "",
+      account2LastName: "",
+      account2Email: "",
+      account2PhoneNumber: "",
       dialogIsVisible: false,
       showPassword2: false,
       base64: "",
@@ -426,37 +458,78 @@ export default {
     },
 
     async createUser() {
-      await StoreUtils.commit(StoreUtils.mutations.auth.updateSignUpFormData, {
-        email: this.model.email,
-      })
-      await StoreUtils.dispatch(StoreUtils.actions.auth.createUser, {
-        firstName: this.model.firstName,
-        lastName: this.model.lastName,
-        email: this.model.email,
-        password: this.model.password,
-        referralCode: this.randomString,
-        frontId: this.url,
-        backId: this.url2,
-        totalDepositedAmount: 0.00,
-        phoneNumber: this.model.phoneNumber,
-        totalWithdrawals: 0.00,
-        btcBalance: 0.00,
-        displayPicture: "",
-        walletAddress: "",
-        walletName: "",
-        twoFactorAuthenticationCode: "",
-        userStatus: "unVerified",
-        role: "Customer",
-        country: this.model.country,
-        address: "",
-        totalProfits: 0.00,
-        totalLoanRequested: 0.00,
-        loanPrepaymentFee: 0.00,
-        loanPlan: "",
-        loanStatus: "",
-        otp: ""
-      })
-      // await this.$router.push("/email-auth")
+      if (this.accountType === 'Joint') {
+        await StoreUtils.commit(StoreUtils.mutations.auth.updateSignUpFormData, {
+          email: this.model.email,
+        })
+        await StoreUtils.dispatch(StoreUtils.actions.auth.createUser, {
+          firstName: this.model.firstName,
+          lastName: this.model.lastName,
+          email: this.model.email,
+          password: this.model.password,
+          referralCode: this.randomString,
+          frontId: this.url,
+          backId: this.url2,
+          totalDepositedAmount: 0.00,
+          phoneNumber: this.model.phoneNumber,
+          totalWithdrawals: 0.00,
+          btcBalance: 0.00,
+          displayPicture: "",
+          walletAddress: "",
+          walletName: "",
+          twoFactorAuthenticationCode: "",
+          userStatus: "unVerified",
+          role: "Customer",
+          country: this.model.country,
+          address: "",
+          totalProfits: 0.00,
+          totalLoanRequested: 0.00,
+          loanPrepaymentFee: 0.00,
+          loanPlan: "",
+          loanStatus: "",
+          otp: "",
+
+          accountType: this.accountType,
+          account2FirstName: this.account2FirstName,
+          account2LastName: this.account2LastName,
+          account2Email: this.account2Email,
+          account2PhoneNumber: this.account2PhoneNumber,
+          account2Address: "",
+          account2FrontId: "",
+          account2BackId: "",
+        })
+      } else {
+        await StoreUtils.commit(StoreUtils.mutations.auth.updateSignUpFormData, {
+          email: this.model.email,
+        })
+        await StoreUtils.dispatch(StoreUtils.actions.auth.createUser, {
+          firstName: this.model.firstName,
+          lastName: this.model.lastName,
+          email: this.model.email,
+          password: this.model.password,
+          referralCode: this.randomString,
+          frontId: this.url,
+          backId: this.url2,
+          totalDepositedAmount: 0.00,
+          phoneNumber: this.model.phoneNumber,
+          totalWithdrawals: 0.00,
+          btcBalance: 0.00,
+          displayPicture: "",
+          walletAddress: "",
+          walletName: "",
+          twoFactorAuthenticationCode: "",
+          userStatus: "unVerified",
+          role: "Customer",
+          country: this.model.country,
+          address: "",
+          totalProfits: 0.00,
+          totalLoanRequested: 0.00,
+          loanPrepaymentFee: 0.00,
+          loanPlan: "",
+          loanStatus: "",
+          otp: ""
+        })
+      }
     },
 
     generateRandomString() {
@@ -555,8 +628,8 @@ form {
 
 
 .company-logo{
-  width: 30%;
-  margin-top: 4%;
+  width: 20%;
+  margin-top: 1%;
 }
 
 :root {
@@ -574,7 +647,7 @@ form {
 
 .header-span {
   color: #ffffff;
-  font-size: 25px;
+  font-size: 23px;
 }
 
 .wrapper {
@@ -635,8 +708,7 @@ form {
   font-size: 16px;
   line-height: 24px;
 
-  padding: 12px 16px;
-  height: 48px;
+  padding: 5px 16px;
   border-radius: 8px;
   color: var(--black-color);
   border: 1px solid #e4e8ee;
@@ -649,8 +721,7 @@ form {
   font-size: 16px;
   line-height: 24px;
 
-  padding: 12px 16px;
-  height: 48px;
+  padding: 8px 16px;
   border-radius: 8px;
   border: 1px solid #e4e8ee;
   box-shadow: none;
@@ -675,9 +746,8 @@ form {
   font-size: 13px;
   line-height: 24px;
   letter-spacing: -0.1px;
-  padding: 12px 16px;
-  height: 48px;
-  border-radius: 5px;
+  padding: 8px 16px;
+  border-radius: 8px;
   color: var(--black-color);
   border: 1px solid #e4e8ee;
   box-shadow: none;
@@ -769,7 +839,7 @@ form {
   padding-bottom: 40px;
 }
 .create-text {
-  font-size: 14px;
+  font-size: 15px;
 }
 
 .create-link {
@@ -800,8 +870,8 @@ button{
   margin-top: 10%;
 }
 .space{
-  padding-top: 11px;
-  padding-bottom: 11px;
+  padding-top: 6px;
+  padding-bottom: 6px;
   padding-right: 10px;
   border: 1px solid #d0d5dd;
   border-left-style: none;
@@ -812,7 +882,7 @@ button{
 .input-form-1{
   order: 1;
   width: 100%;
-  padding: 13px 20px;
+  padding: 8px 20px;
   margin: 6px 0;
   display: inline-block;
   box-sizing: border-box;

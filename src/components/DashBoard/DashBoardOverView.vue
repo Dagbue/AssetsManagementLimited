@@ -43,12 +43,8 @@
 <!--      <a><router-link to="/update-account">Click here</router-link></a>-->
     </p>
 
-    <!--    <div style="color: white;" id="app">-->
-    <!--      <h1>Dollar to Bitcoin Converter</h1>-->
-    <!--      <input type="number" v-model="dollars" placeholder="Enter amount in dollars" />-->
-    <!--      <button @click="convertToBitcoin">Convert</button>-->
-    <!--      <p style="color:#ffffff;" v-if="bitcoin">Equivalent in Bitcoin: {{ bitcoin }}</p>-->
-    <!--    </div>-->
+<!--    <p style="color: #ffffff;">{{UserDetails.user}}</p>-->
+
 
     <div class="law">
       <div class="section-3">
@@ -116,7 +112,7 @@
           <div class="content-1">
             <p class="content-1-text-1">Main Balance</p>
             <div>
-              <p class="content-1-text-2">£ {{UserDetails.user.totalDepositedAmount - UserDetails.user.totalWithdrawals + UserDetails.user.totalProfits | formatAmount2}}</p>
+              <p class="content-1-text-2">£ {{UserDetails.user.totalDepositedAmount - UserDetails.user.totalWithdrawals + UserDetails.user.totalProfits + UserDetails.user.bonus | formatAmount2}}</p>
             </div>
           </div>
           <div class="content-2">
