@@ -1,99 +1,80 @@
 <template>
-  <div class="alpha">
-    <div class="body">
-      <!--      <h2>Transactions</h2>-->
-      <div class="row trans-mgt">
-
-
-        <div class="form-group fg--search">
-          <button type="submit" @click.prevent="searchTransactions"><i class="fa fa-search"></i></button>
-          <input style="color: #FFFFFF;" type="text" class="input" placeholder="Search transaction..." v-model="searchQuery" @input="searchTransactions"/>
-        </div>
-
-
-        <div class="row filter_group">
-          <!--          <div class="blue">Download transactions</div>-->
-          <div class="action-content">
-            <img src="@/assets/Filterslines.svg"  alt="Export"/>
-            <p>Filter</p>
-          </div>
-        </div>
-      </div>
+  <div class="section-5">
+    <div class="empty-state-container" v-if="this.UserDeposit.deposits.length === 0">
+      <img src="@/assets/empty.svg" alt="empty" class="empty-state">
+      <p class="empty-state-text-1">You have nothing to see</p>
+      <p class="empty-state-text-2">This is where the user Deposits will appear</p>
     </div>
-    <div class="section-5">
-      <div class="empty-state-container" v-if="this.UserDeposit.deposits.length === 0">
-        <img src="@/assets/empty.svg" alt="empty" class="empty-state">
-        <p class="empty-state-text-1">You have nothing to see</p>
-        <p class="empty-state-text-2">This is where your Deposits will appear</p>
-      </div>
-
-      <p style="color: #FFFFFF;">{{this.UserDeposit.deposits[3]}}</p>
-      <div class="table" v-if="this.UserDeposit.deposits.length >0">
-        <table>
-          <tr>
-            <th>S/N</th>
-            <th>Amount</th>
-            <th>Transaction Type</th>
-            <th>Transaction Reference</th>
-            <th>Date</th>
-            <th>Status</th>
-          </tr>
 
 
-          <div v-if="loading">
-            <div class="table-content">
-              <div class="name-wrapper-body">
-                <p
-                    class="table-body-text"
-                    style="position: absolute;
+    <div class="table" v-if="this.UserDeposit.deposits.length >0">
+      <table>
+        <tr>
+          <th>S/N</th>
+          <th>Amount</th>
+          <th>Transaction Type</th>
+          <th>Transaction Reference</th>
+          <th>Date</th>
+          <th>Status</th>
+          <th>Action</th>
+        </tr>
+
+
+        <div v-if="loading">
+          <div class="table-content">
+            <div class="name-wrapper-body">
+              <p
+                  class="table-body-text"
+                  style="position: absolute;
                     margin-left: 43%"
-                >
-                  <base-loader/>
-                </p>
-              </div>
+              >
+                <base-loader/>
+              </p>
             </div>
           </div>
-
-          <tbody v-else v-for="child in paginatedItems" :key="child.key">
-          <tr>
-            <td data-label="S/N">{{child.index}}</td> <!-- Assuming 'child.index' is your serial number or similar -->
-            <td data-label="Amount">{{child.amount}}</td>
-            <td data-label="Transaction Type">{{child.transactionType}}</td>
-            <td data-label="Transaction Reference">{{child.transactionReference}}</td>
-            <td data-label="Date">{{child.createdAt | formatDate}}</td>
-            <td data-label="Status">
-              <div>
-                <p class="status-won" v-if="child.depositStatus === 'approved'">{{child.depositStatus | lowercase}}</p>
-                <p class="status-lost" v-if="child.depositStatus === 'declined'">{{child.depositStatus | lowercase}}</p>
-                <p class="status-pending" v-if="child.depositStatus === 'PENDING'">{{child.depositStatus | lowercase}}</p>
-              </div>
-            </td>
-          </tr>
-          </tbody>
-
-
-        </table>
-        <div class="pagination">
-          <button @click="previousPage" :disabled="currentPage === 1" class="previous">Previous</button>
-          <div class="page-indicator">
-            Page {{ currentPage }} of {{ totalPages }}
-          </div>
-          <button @click="nextPage" :disabled="currentPage === totalPages" class="previous">Next</button>
         </div>
+
+        <tbody v-else v-for="child in paginatedItems" :key="child.key">
+        <tr>
+          <td data-label="S/N"></td> <!-- Assuming 'child.index' is your serial number or similar -->
+          <td data-label="Amount">{{child.amount}}</td>
+          <td data-label="Transaction Type">{{child.transactionType}}</td>
+          <td data-label="Transaction Reference">{{child.transactionReference}}</td>
+          <td data-label="Date">{{child.createdAt | formatDate}}</td>
+          <td data-label="Status">
+            <div>
+              <p class="status-won" v-if="child.depositStatus === 'approved'">{{child.depositStatus | lowercase}}</p>
+              <p class="status-lost" v-if="child.depositStatus === 'declined'">{{child.depositStatus | lowercase}}</p>
+              <p class="status-pending" v-if="child.depositStatus === 'PENDING'">{{child.depositStatus | lowercase}}</p>
+            </div>
+          </td>
+          <td data-label="Action">
+            <button class="previous2" @click="depositEdit(child)">Edit</button>
+          </td>
+        </tr>
+        </tbody>
+
+
+      </table>
+      <div class="pagination">
+        <button @click="previousPage" :disabled="currentPage === 1" class="previous">Previous</button>
+        <div class="page-indicator">
+          Page {{ currentPage }} of {{ totalPages }}
+        </div>
+        <button @click="nextPage" :disabled="currentPage === totalPages" class="previous">Next</button>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-
-
+import BaseLoader from "@/components/baseComponents/loaders/BaseLoader.vue";
 import {mapState} from "vuex";
 import StoreUtils from "@/utility/StoreUtils";
-import BaseLoader from "@/components/baseComponents/loaders/BaseLoader.vue";
+import router from "@/router";
 
 export default {
-  name: "DashBoardDepositTransactions",
+  name: "DashBoardUserDepositTableAdmin",
   components: {BaseLoader},
   data () {
     return {
@@ -151,6 +132,18 @@ export default {
     },
   },
   methods: {
+
+    async depositEdit(child) {
+      await StoreUtils.commit(StoreUtils.mutations.auth.updateDepositUserId, {
+        userId: child.userId
+      })
+      await StoreUtils.dispatch(StoreUtils.actions.deposit.readDepositById, {
+        depositId: child.depositId,
+      })
+      await StoreUtils.rootGetters(StoreUtils.getters.deposit.getReadDepositById)
+      await router.push("/deposit-update");
+    },
+
     previousPage() {
       if (this.currentPage > 1) {
         this.currentPage--;
@@ -199,11 +192,12 @@ export default {
       this.userInfo = JSON.parse(storedObject);
     }
 
-    StoreUtils.dispatch(StoreUtils.actions.deposit.readUserDeposit, {
-      userId : localStorage.getItem('userId'),
-    })
-  }
+    StoreUtils.rootGetters(StoreUtils.getters.deposit.getReadUserDeposit)
 
+    // StoreUtils.dispatch(StoreUtils.actions.deposit.readUserDeposit, {
+    //   userId : localStorage.getItem('userId'),
+    // })
+  }
 }
 </script>
 
@@ -245,7 +239,7 @@ h2{
   font-weight: 700;
   font-size: 19px;
   line-height: 25px;
-  color: #ffffff;
+  color: #0f171c;
 }
 .row{
   display: flex;
@@ -264,7 +258,7 @@ h2{
   display: flex;
   align-items: center;
   align-content: center;
-  background-color: #FFFFFF;
+  background-color: #0f171c;
   border: 0.5px solid #3C4A57FF;
   font-size: 13px;
   padding:  6px 14px;
@@ -280,7 +274,7 @@ h2{
   font-size: 13px;
   background-color: #1570EF;
   border: 1px solid #1570EF;
-  color: #ffffff;
+  color: #0f171c;
 }
 
 .fg--search {
@@ -314,7 +308,7 @@ h2{
 }
 
 .fa-search{
-  color: #ffffff;
+  color: #0f171c;
   margin-right: 10px;
 }
 table {
@@ -349,9 +343,9 @@ td {
   align-content: center;
   padding: 12px 8px;
   /*letter-spacing: 1px;*/
-  color: #ffffff;
+  color: #0f171c;
   font-weight: 200;
-  font-size: 12px;
+  font-size: 14px;
   /*border-bottom: 1px solid #E3EBF6;*/
 }
 
@@ -366,7 +360,7 @@ td {
   font-weight: 600;
   font-size: 18px;
   line-height: 20px;
-  color: #FFFFFF;
+  color: #0f171c;
   padding-top: 0.5%;
   padding-bottom: 0.5%;
 }
@@ -376,7 +370,7 @@ td {
   font-size: 14px;
   line-height: 20px;
   text-align: center;
-  color: #FFFFFF;
+  color: #0f171c;
   padding-bottom: 1.25%;
 }
 
@@ -423,7 +417,7 @@ td {
 }
 
 .action-content p {
-  color: #FFFFFF;
+  color: #0f171c;
   font-size: 13px;
 }
 
@@ -452,7 +446,7 @@ tr td:first-child:before
   width: 100px;
   height: 30px;
   background: transparent;
-  color: #ffffff;
+  color: #0f171c;
   /*border: 1px solid #1570EF;*/
   border: 0.5px solid #3C4A57FF;
   box-shadow: 0 1px 2px rgba(16, 24, 40, 0.05);
@@ -463,14 +457,36 @@ tr td:first-child:before
   box-shadow: 0 0 5px rgba(16, 24, 40, 0.2);
 }
 
-.page-indicator{
+.previous2{
+  /*display: flex;*/
+  /*align-content: center;*/
+  /*align-items: center;*/
+  text-align: center;
+  padding: 8px 14px;
+  gap: 8px;
+  font-size: 12px;
+  width: 100px;
+  height: 30px;
+  background: #0f171c;
   color: #ffffff;
+  /*border: 1px solid #1570EF;*/
+  border: 0.5px solid #0f171c;
+  box-shadow: 0 1px 2px rgba(16, 24, 40, 0.05);
+  border-radius: 4px;
+}
+
+.previous2:hover{
+  box-shadow: 0 0 7px rgba(16, 24, 40, 0.2);
+}
+
+.page-indicator{
+  color: #0f171c;
   font-weight: 200;
   font-size: 13px;
 }
 
 input::placeholder{
-  color: #FFFFFF;
+  color: #0f171c;
 }
 
 .name-wrapper-body {

@@ -11,6 +11,7 @@ export const state = {
   userInfo: new AuthenticationResponse().login,
   token: null,
   adminUserId: null,
+  depositUserId: null,
   signUpFormData: null,
   forgotPasswordFormData: null,
   readUserById: null,
@@ -29,6 +30,9 @@ export const getters = {
   },
   getAdminUserId: (state) => {
     return state.adminUserId;
+  },
+  getDepositUserId: (state) => {
+    return state.depositUserId;
   },
   getSignUpFormData: (state) => {
     return state.signUpFormData;
@@ -62,6 +66,9 @@ export const mutations = {
   },
   updateAdminUserId(state, payload){
     state.adminUserId = payload
+  },
+  updateDepositUserId(state, payload){
+    state.depositUserId = payload
   },
   updateSignUpFormData(state, payload){
     state.signUpFormData = payload

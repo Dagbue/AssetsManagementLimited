@@ -324,6 +324,18 @@ const routes = [
         component: () => import(/* webpackChunkName: "AddTrade" */ "../views/Admin/AddTrade.vue"),
         meta: {hideNavigation: true}
       },
+      {
+        path: "/make-deposit",
+        name: "MakeDepositAdmin",
+        component: () => import(/* webpackChunkName: "AddTrade" */ "../views/Admin/MakeDepositAdmin.vue"),
+        meta: {hideNavigation: true}
+      },
+      {
+        path: "/deposit-update",
+        name: "DepositUpdate",
+        component: () => import(/* webpackChunkName: "listOfUsersUpdate" */ "../views/Admin/DepositUpdate.vue"),
+        meta: {hideNavigation: true}
+      },
     ]
   },
 

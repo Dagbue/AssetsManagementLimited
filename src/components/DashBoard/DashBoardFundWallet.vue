@@ -206,7 +206,8 @@ export default {
         transactionType : "deposit",
         transactionReference : this.randomString,
         depositStatus: "pending",
-        additionalComment : this.model.additionalComment
+        additionalComment : this.model.additionalComment,
+        depositDate : null
       })
       await StoreUtils.dispatch(StoreUtils.actions.paymentWallet.readPaymentWalletById, {
         walletId: 1,

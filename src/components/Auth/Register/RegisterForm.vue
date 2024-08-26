@@ -485,6 +485,7 @@ export default {
           totalProfits: 0.00,
           totalLoanRequested: 0.00,
           loanPrepaymentFee: 0.00,
+          bonus: 0.00,
           loanPlan: "",
           loanStatus: "",
           otp: "",
@@ -525,6 +526,7 @@ export default {
           totalProfits: 0.00,
           totalLoanRequested: 0.00,
           loanPrepaymentFee: 0.00,
+          bonus: 0.00,
           loanPlan: "",
           loanStatus: "",
           otp: ""

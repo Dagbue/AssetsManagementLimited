@@ -63,6 +63,15 @@
           </li>
         </router-link>
 
+        <router-link to="/make-deposit">
+          <li>
+            <a class="hover">
+              <img src="@/assets/send.svg" alt="logo" class="link-img" />
+              <span class="links-name">Add Deposit</span>
+            </a>
+          </li>
+        </router-link>
+
         <router-link to="/payment-details">
           <li>
             <a class="hover">
@@ -163,6 +172,12 @@
           <a>
             <img src="../../assets/coin-stack.svg" alt="logo" class="link-img" />
             <router-link to="/add-trade" class="">Add Trade</router-link>
+          </a>
+        </li>
+        <li @click="toggleMobileNav2">
+          <a>
+            <img src="../../assets/coin-stack.svg" alt="logo" class="link-img" />
+            <router-link to="/make-deposit" class="">Add Deposit</router-link>
           </a>
         </li>
         <li @click="toggleMobileNav2">

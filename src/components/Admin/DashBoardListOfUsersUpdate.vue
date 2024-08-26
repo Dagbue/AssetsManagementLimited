@@ -163,6 +163,26 @@
 
           </div>
 
+
+
+            <div style="margin-left: 3.5%;" class="space">
+              <label>current Plan</label>
+              <p class="edit">current Plan : {{currentPlan}}</p>
+              <!--              <input type="text" v-model="userStatus" required="required" class="form-input"/>-->
+              <select v-model="currentPlan"  class="form-input">
+                <option selected disabled value="">select Plan</option>
+                <option :value="null" disabled>select Plan</option>
+                <option value="Basic">Basic</option>
+                <option value="Standard">Standard</option>
+                <option value="Premium">Premium</option>
+                <option value="Deluxe">Deluxe</option>
+                <option value="401kPlan">401k Plan</option>
+              </select>
+            </div>
+
+
+
+
           <div class="separate">
 
             <div class="space">
@@ -249,6 +269,7 @@ export default {
 
       createdAt: "",
       userStatus: "",
+      currentPlan: "",
     }
   },
   computed:{
@@ -303,6 +324,7 @@ export default {
       this.account2LastName = this.readUserById.user.account2LastName;
       this.account2Email = this.readUserById.user.account2Email;
       this.account2PhoneNumber = this.readUserById.user.account2PhoneNumber;
+      this.currentPlan = this.readUserById.user.currentPlan;
     },
 
     async updateDetails() {
@@ -332,6 +354,7 @@ export default {
         account2LastName : this.account2LastName,
         account2Email : this.account2Email,
         account2PhoneNumber : this.account2PhoneNumber,
+        currentPlan : this.currentPlan,
       })
       await StoreUtils.dispatch(StoreUtils.actions.auth.allUsers)
       await StoreUtils.dispatch(StoreUtils.actions.auth.readReadUserById, {
