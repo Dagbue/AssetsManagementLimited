@@ -14,7 +14,7 @@
 
           <div class="lawrence-1">
             <router-link to="/upload-display-picture" class="account-links2">Display Picture</router-link>
-            <router-link to="/link-Wallet-Address" class="account-links2">Wallet Address</router-link>
+            <router-link to="/link-Wallet-Address" class="account-links2">Sync Wallet</router-link>
 <!--            <router-link to="/setup2FA" class="account-links2">SetUp 2FA</router-link>-->
           </div>
 

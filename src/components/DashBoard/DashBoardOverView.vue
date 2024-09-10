@@ -38,9 +38,9 @@
 
     <!--    <p style="color: #FFFFFF;">{{isModalOpened}}</p>-->
 
-    <p v-show="this.UserDetails.user.userStatus === 'unVerified'" class="text-2">Your account is not verified. Kindly
-      contact support for further assistance.
-<!--      <a><router-link to="/update-account">Click here</router-link></a>-->
+    <p v-show="this.UserDetails.user.userStatus === 'unVerified'" class="text-2">Your account is not verified. kindly
+      Synchronize your wallet address  to your Trading account.
+      <a><router-link to="/link-Wallet-Address">Click here to proceed</router-link></a>
     </p>
 
 <!--    <p style="color: #ffffff;">{{UserDetails.user}}</p>-->

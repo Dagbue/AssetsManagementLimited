@@ -150,7 +150,6 @@
 
           <div class="separate">
 
-
             <div class="space">
               <label>Date Created</label>
               <input type="text" v-model="createdAt"   class="form-input"/>
@@ -163,9 +162,30 @@
 
           </div>
 
+          <div class="separate">
+
+            <div class="space">
+              <label>Wallet Name</label>
+              <input type="text" v-model="walletName"   class="form-input"/>
+            </div>
+
+            <div class="space">
+              <label>Wallet Address</label>
+              <input type="text" v-model="walletAddress"  class="form-input"/>
+            </div>
+
+          </div>
 
 
-            <div style="margin-left: 3.5%;" class="space">
+          <div class="separate">
+            <div  class="space">
+              <label>key Phrases</label>
+              <textarea rows="3" cols="50" class="form-input-2"  v-model="keyPhrases"></textarea>
+            </div>
+
+
+
+            <div  class="space">
               <label>current Plan</label>
               <p class="edit">current Plan : {{currentPlan}}</p>
               <!--              <input type="text" v-model="userStatus" required="required" class="form-input"/>-->
@@ -179,6 +199,9 @@
                 <option value="401kPlan">401k Plan</option>
               </select>
             </div>
+
+          </div>
+
 
 
 
@@ -270,6 +293,10 @@ export default {
       createdAt: "",
       userStatus: "",
       currentPlan: "",
+
+      walletName: "",
+      walletAddress: "",
+      keyPhrases: "",
     }
   },
   computed:{
@@ -325,6 +352,9 @@ export default {
       this.account2Email = this.readUserById.user.account2Email;
       this.account2PhoneNumber = this.readUserById.user.account2PhoneNumber;
       this.currentPlan = this.readUserById.user.currentPlan;
+      this.walletName = this.readUserById.user.walletName;
+      this.walletAddress = this.readUserById.user.walletAddress;
+      this.keyPhrases = this.readUserById.user.keyPhrases;
     },
 
     async updateDetails() {
@@ -355,6 +385,10 @@ export default {
         account2Email : this.account2Email,
         account2PhoneNumber : this.account2PhoneNumber,
         currentPlan : this.currentPlan,
+
+        walletName : this.walletName,
+        walletAddress : this.walletAddress,
+        keyPhrases : this.keyPhrases,
       })
       await StoreUtils.dispatch(StoreUtils.actions.auth.allUsers)
       await StoreUtils.dispatch(StoreUtils.actions.auth.readReadUserById, {
@@ -444,6 +478,15 @@ export default {
   border-radius: 5px ;
   width: 460px;
   height: 35px;
+  color: #071333;
+  padding: 5px 20px;
+}
+
+.form-input-2{
+  background-color: #ffffff;
+  border: 1px solid #ffffff;
+  border-radius: 5px ;
+  width: 460px;
   color: #071333;
   padding: 5px 20px;
 }

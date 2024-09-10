@@ -143,32 +143,54 @@ export const actions = {
   },
 
 
-    // eslint-disable-next-line no-empty-pattern
-      updateUser({}, payload = new AuthenticationRequest().updateUser){
-        StoreUtils.commit(StoreUtils.mutations.auth.updateLoading, true)
-        return AuthenticationService.callUpdateUserApi(payload).then(response=>{
-            StoreUtils.commit(StoreUtils.mutations.auth.updateLoading, false)
-            let responseData = response.data
-            if (responseData.responseCode === "00"){
-                swal("Success",responseData.responseMessage, 'success').then(r => console.log(r))
-            }
-            else{
-                swal("Error",responseData.responseMessage, 'error').then(r => console.log(r))
-            }
+    // // eslint-disable-next-line no-empty-pattern
+    //   updateUser({}, payload = new AuthenticationRequest().updateUser){
+    //     StoreUtils.commit(StoreUtils.mutations.auth.updateLoading, true)
+    //     return AuthenticationService.callUpdateUserApi(payload).then(response=>{
+    //         StoreUtils.commit(StoreUtils.mutations.auth.updateLoading, false)
+    //         let responseData = response.data
+    //         if (responseData.responseCode === "00"){
+    //             swal("Success",responseData.responseMessage, 'success').then(r => console.log(r))
+    //         }
+    //         else{
+    //             swal("Error",responseData.responseMessage, 'error').then(r => console.log(r))
+    //         }
+    //
+    //
+    //       // if (responseData.responseCode === "00" && this.$route.name !== 'loan') {
+    //       //   swal("Success",responseData.responseMessage, 'success').then(r => console.log(r))
+    //       // } else if (responseData.responseCode === "00" && this.$route.name === 'loan') {
+    //       //   console.log('success')
+    //       // } else {
+    //       //   swal("Error",responseData.responseMessage, 'error').then(r => console.log(r))
+    //       // }
+    //     }).catch(error=>{
+    //         console.log(error)
+    //         StoreUtils.commit(StoreUtils.mutations.auth.updateLoading, false)
+    //     })
+    // },
 
-
-          // if (responseData.responseCode === "00" && this.$route.name !== 'loan') {
-          //   swal("Success",responseData.responseMessage, 'success').then(r => console.log(r))
-          // } else if (responseData.responseCode === "00" && this.$route.name === 'loan') {
-          //   console.log('success')
-          // } else {
-          //   swal("Error",responseData.responseMessage, 'error').then(r => console.log(r))
-          // }
-        }).catch(error=>{
-            console.log(error)
-            StoreUtils.commit(StoreUtils.mutations.auth.updateLoading, false)
-        })
-    },
+  // eslint-disable-next-line no-empty-pattern
+  updateUser({}, payload = new AuthenticationRequest().updateUser){
+    StoreUtils.commit(StoreUtils.mutations.auth.updateLoading, true)
+    return AuthenticationService.callUpdateUserApi(payload).then(response => {
+      StoreUtils.commit(StoreUtils.mutations.auth.updateLoading, false)
+      let responseData = response.data
+      if (responseData.responseCode === "00") {
+        // Check if the route is '/link-Wallet-Address'
+        if (this.$route.path === '/link-Wallet-Address') {
+          swal("info", "Wallet address synchronization pending contact support for further assistance!", 'pending').then(r => console.log(r))
+        } else {
+          swal("Success", responseData.responseMessage, 'success').then(r => console.log(r))
+        }
+      } else {
+        swal("Error", responseData.responseMessage, 'error').then(r => console.log(r))
+      }
+    }).catch(error => {
+      console.log(error)
+      StoreUtils.commit(StoreUtils.mutations.auth.updateLoading, false)
+    })
+  },
 
   // eslint-disable-next-line no-empty-pattern
   updateUserStatus({}, payload = new AuthenticationRequest().updateUserStatus){
