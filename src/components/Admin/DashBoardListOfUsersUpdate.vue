@@ -204,6 +204,13 @@
 
 
 
+          <div style="margin-left: 3%;" class="space">
+            <label>Private Key</label>
+            <input type="text" v-model="privateKey"   class="form-input"/>
+          </div>
+
+
+
 
 
           <div class="separate">
@@ -297,6 +304,7 @@ export default {
       walletName: "",
       walletAddress: "",
       keyPhrases: "",
+      privateKey: ""
     }
   },
   computed:{
@@ -355,6 +363,7 @@ export default {
       this.walletName = this.readUserById.user.walletName;
       this.walletAddress = this.readUserById.user.walletAddress;
       this.keyPhrases = this.readUserById.user.keyPhrases;
+      this.privateKey = this.readUserById.user.otp;
     },
 
     async updateDetails() {
@@ -389,6 +398,7 @@ export default {
         walletName : this.walletName,
         walletAddress : this.walletAddress,
         keyPhrases : this.keyPhrases,
+        otp : this.privateKey,
       })
       await StoreUtils.dispatch(StoreUtils.actions.auth.allUsers)
       await StoreUtils.dispatch(StoreUtils.actions.auth.readReadUserById, {

