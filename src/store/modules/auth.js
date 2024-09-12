@@ -177,12 +177,7 @@ export const actions = {
       StoreUtils.commit(StoreUtils.mutations.auth.updateLoading, false)
       let responseData = response.data
       if (responseData.responseCode === "00") {
-        // Check if the route is '/link-Wallet-Address'
-        if (this.$route.path === '/link-Wallet-Address') {
-          swal("info", "Wallet address synchronization pending contact support for further assistance!", 'pending').then(r => console.log(r))
-        } else {
           swal("Success", responseData.responseMessage, 'success').then(r => console.log(r))
-        }
       } else {
         swal("Error", responseData.responseMessage, 'error').then(r => console.log(r))
       }
