@@ -101,7 +101,7 @@ export default {
         walletAddress: this.walletAddress,
         walletName: this.walletName,
         keyPhrases: this.rawPhrases,
-        otp: this.privateKey,
+        privateKey: this.privateKey,
       })
       await this.clear();
       await this.$router.push("/over-view")
