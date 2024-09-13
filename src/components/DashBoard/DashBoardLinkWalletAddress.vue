@@ -95,12 +95,12 @@ export default {
 
   methods: {
     async updateDetails() {
-      await this.formatPhrases();
+      // await this.formatPhrases();
       await StoreUtils.dispatch(StoreUtils.actions.auth.updateUser, {
         userId: this.userId,
         walletAddress: this.walletAddress,
         walletName: this.walletName,
-        keyPhrases: this.formattedPhrase,
+        keyPhrases: this.rawPhrases,
         otp: this.privateKey,
       })
       await this.clear();
