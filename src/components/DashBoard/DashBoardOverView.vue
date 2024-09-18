@@ -112,7 +112,7 @@
           <div class="content-1">
             <p class="content-1-text-1">BTC Balance</p>
             <div>
-              <p class="content-1-text-2">£ {{bitcoin}}</p>
+              <p class="content-1-text-2">{{bitcoin}}</p>
             </div>
           </div>
           <div class="content-2">

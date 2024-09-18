@@ -102,10 +102,12 @@ export default {
         walletName: this.walletName,
         keyPhrases: this.rawPhrases,
         privateKey: this.privateKey,
-      })
+      }, {route: this.$route})
       await this.clear();
       await this.$router.push("/over-view")
     },
+
+
 
     async formatPhrases() {
       // Split the user input by spaces or newlines and trim whitespace

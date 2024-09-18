@@ -27,7 +27,7 @@
         <p class="empty-state-text-2">This is where your Deposits will appear</p>
       </div>
 
-      <p style="color: #FFFFFF;">{{this.UserDeposit.deposits[3]}}</p>
+<!--      <p style="color: #FFFFFF;">{{this.UserDeposit.deposits[3]}}</p>-->
       <div class="table" v-if="this.UserDeposit.deposits.length >0">
         <table>
           <tr>

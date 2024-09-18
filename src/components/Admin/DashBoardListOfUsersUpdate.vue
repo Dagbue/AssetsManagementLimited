@@ -184,7 +184,6 @@
             </div>
 
 
-
             <div  class="space">
               <label>current Plan</label>
               <p class="edit">current Plan : {{currentPlan}}</p>
