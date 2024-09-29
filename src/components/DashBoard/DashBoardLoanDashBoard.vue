@@ -102,6 +102,25 @@ export default {
 
   },
 
+  beforeMount() {
+    this.generateRandomString()
+
+    StoreUtils.dispatch(StoreUtils.actions.auth.readReadUserById, {
+      userId : localStorage.getItem('userId')
+    })
+
+    StoreUtils.rootGetters(StoreUtils.getters.auth.getReadUserById)
+
+    this.userId = localStorage.getItem('userId')
+
+    // Retrieve the object from local storage
+    const storedObject = localStorage.getItem('userInfo');
+
+    if (storedObject) {
+      this.userInfo = JSON.parse(storedObject);
+    }
+  },
+
   created() {
     StoreUtils.dispatch(StoreUtils.actions.auth.readReadUserById, {
       userId : localStorage.getItem('userId')

@@ -196,6 +196,24 @@ export default {
 
   },
 
+  beforeMount() {
+    StoreUtils.rootGetters(StoreUtils.getters.trade.getReadUserTrade)
+
+    StoreUtils.dispatch(StoreUtils.actions.trade.readUserTrade, {
+      userId : localStorage.getItem('userId'),
+    });
+
+
+    this.userId = localStorage.getItem('userId')
+
+    // Retrieve the object from local storage
+    const storedObject = localStorage.getItem('userInfo');
+
+    if (storedObject) {
+      this.userInfo = JSON.parse(storedObject);
+    }
+  },
+
   created() {
 
     StoreUtils.rootGetters(StoreUtils.getters.trade.getReadUserTrade)

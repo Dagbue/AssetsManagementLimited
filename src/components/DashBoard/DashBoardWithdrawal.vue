@@ -210,6 +210,20 @@ export default {
       this.randomString = result;
     }
   },
+
+  beforeMount() {
+    this.generateRandomString()
+
+    this.userId = localStorage.getItem('userId')
+
+    // Retrieve the object from local storage
+    const storedObject = localStorage.getItem('userInfo');
+
+    if (storedObject) {
+      this.userInfo = JSON.parse(storedObject);
+    }
+  },
+
   created() {
     this.userId = localStorage.getItem('userId')
 

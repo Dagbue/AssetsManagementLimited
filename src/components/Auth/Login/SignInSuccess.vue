@@ -81,8 +81,10 @@ export default {
       localStorage.userId = this.userDetails.user.userId
       localStorage.userFirstName = this.userDetails.user.firstName
       localStorage.userLastName = this.userDetails.user.lastName
+      localStorage.bitcoinRate = this.bitcoinRate
       localStorage.setItem('userInfo', JSON.stringify(this.userDetails.user));
       localStorage.setItem('userTrade', JSON.stringify(this.userTrade.trades));
+      // console.log(localStorage)
     },
 
 

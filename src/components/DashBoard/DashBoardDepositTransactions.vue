@@ -175,6 +175,22 @@ export default {
 
   },
 
+  beforeMount() {
+    this.userId = localStorage.getItem('userId')
+
+    // Retrieve the object from local storage
+    const storedObject = localStorage.getItem('userInfo');
+
+    if (storedObject) {
+      this.userInfo = JSON.parse(storedObject);
+    }
+
+    StoreUtils.rootGetters(StoreUtils.getters.deposit.getReadUserDeposit)
+    StoreUtils.dispatch(StoreUtils.actions.deposit.readUserDeposit, {
+      userId : localStorage.getItem('userId'),
+    })
+  },
+
   created() {
     this.userId = localStorage.getItem('userId')
 
