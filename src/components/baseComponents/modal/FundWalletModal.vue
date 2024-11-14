@@ -71,7 +71,7 @@ export default {
   },
   props: {
     selectedItem: {
-      type: Object,
+      type: String,
       default: null
     }
   },
