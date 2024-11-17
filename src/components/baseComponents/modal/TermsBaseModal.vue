@@ -2,75 +2,84 @@
   <div>
     <div class="backdrop" @click="$emit('close')"></div>
     <dialog open>
+<!--      <p class="close" @click="$emit('close')" >X</p>-->
+      <p
+          @click="$emit('close')"
+          style="float: right;
+          font-weight: 900;padding-bottom: 5px;"
+      >X</p>
+      <h2>Terms and Conditions</h2>
       <div>
-        <h4>Legal information and ownership of website</h4>
-        <p>Global Trade Investment Limited ("Website"), which includes all products and services offered by Global Trade Investment Limited,
-          is and remains the sole property of the Company. All rights are reserved in and for the Company Global Trade Investment Limited
-          group is the owner of all the intellectual property rights, including trade names, trademarks, logos
-          and the trade names in and are exclusive to Global Trade Investment Limited at all times. Except where expressly stated
-          to the contrary, copyright in the underlying HTML, text, graphics, audio clips, video clips and other information
-          and material is owned by the Company. No person or entity may alter, modify, reproduce, distribute, display,
-          exploit, transmit, transcribe, reproduce, redistribute, copy, post, store or translate into any other form,
-          any materials or media from the Website, without obtaining prior written permission from Global Trade Investment Limited
-          Group.</p>
+        <h3>Legal information and ownership of website</h3>
+        <p>The website for Assets Management Limited ("Website"), encompassing all associated products and services,
+          is the sole property of Assets Management Limited and remains under its exclusive ownership. All rights
+          reserved. Assets Management Limited and its affiliated group retain full ownership of all intellectual
+          property rights, including but not limited to trade names, trademarks, logos, and other branding elements
+          associated with the Website. Except as explicitly permitted, all underlying HTML, text, graphics, audio
+          clips, video clips, and any other information or content on the Website are copyrighted by Assets
+          Management Limited. No individual or entity is permitted to alter, modify, reproduce, distribute, display,
+          exploit, transmit, transcribe, or translate any materials or media from the Website into any other form
+          without prior written permission from Assets Management Limited Group.</p>
       </div>
       <div>
-        <h4>Data</h4>
-        <p>Data provided via the Website is intended only for informational and private use purposes. The User may obtain
-          the advice of independent investment, financial, legal and tax advisors, if desired, before proceeding with an
-          investment. All information provided via the Website should not be read, interpreted or construed as providing
-          any investment advice by the Company, or its Employees, Officers, Directors, Affiliates, Agents, Service
-          Provider and/or Licensors. This Website does not take into consideration any investment goals, financial
-          situation or specific requirements of any User. Any person and/or entity should carefully consider their
-          financial circumstances prior to entering into any transaction(s) and/or Agreement(s). Any information that
-          the Company has obtained from a User, through the use of the Website is at all times held in confidence and
-          for lawful purposes. Information so obtained is only subject to a disclosure in cases of request imposed by any
-          relevant supervisory body, legal request subjecting the Company to disclose such information(s), or
-          in cases where disclosure of such information is necessary to protect any of Company's legal obligations
-          and/or rights.</p>
+        <h3>Data Disclaimer</h3>
+        <p>The information provided through the Website is strictly for informational and private use. Users are
+          encouraged to seek advice from independent investment, financial, legal, and tax advisors if desired,
+          before making any investment decisions. The content and data shared via the Website are not intended to
+          constitute investment advice from the Company, its Employees, Officers, Directors, Affiliates, Agents,
+          Service Providers, or Licensors. The Website does not account for any User's individual investment
+          objectives, financial situation, or specific needs. Users should assess their financial situation
+          carefully before entering into any transactions or agreements.</p>
+        <p>Any information obtained from Users through the Website will be held in strict confidence and used solely
+          for lawful purposes. Disclosure of such information will only occur in response to lawful requests from
+          relevant supervisory bodies, legal obligations necessitating such disclosure, or if required to protect the
+          Company’s legal rights or obligations.</p>
       </div>
       <div>
-        <h4>Cookies</h4>
-        <p>The Company may use "Cookies", which are minute files containing information that websites use to track
-          visitors of the Website. The Company measures activity of the Website through the use of "Cookies".
-          The Company may access Cookies on the User's Computer in order to obtain information related to which website,
-          banners and/or advertisements let the User to the Company's Website. Details transmitted through Cookies shall
-          not be used for any direct promotional or marketing purposes without the User's Prior Consent.</p>
+        <h3>Use of Cookies</h3>
+        <p>The Company utilizes "Cookies," which are small data files that enable tracking of Website activity.
+          Cookies allow Assets Management Limited to analyze traffic and User interactions with the Website, helping
+          improve overall service delivery. The Company may access cookies on Users’ devices to gather information
+          regarding the source of visits, banners, or advertisements that directed Users to the Website. However,
+          information collected through cookies will not be used for direct promotional or marketing activities
+          without the User’s prior consent.</p>
       </div>
       <div>
-        <h4>Cancellations</h4>
-        <p>Client are allowed to terminate their accounts, but stand to forfeit all profits earned and give a 100 day
-          prior notice for documentation. Clients are advised to thoroughly go through the terms and conditions and
-          become certain of investing before proceeding.</p>
+        <h3>Account Termination and Cancellations</h3>
+        <p>Clients may choose to terminate their accounts. However, account termination will result in the forfeiture
+          of any profits earned. Additionally, clients must provide a 100-day advance notice for documentation
+          purposes. Clients are strongly advised to carefully review and understand the terms and conditions before
+          proceeding with any investment or trading activities.</p>
       </div>
       <div>
-        <h4>Amendments</h4>
-        <p>Global Trade Investment Limited has the right to amend the Agreement without obtaining any prior consent from the Client.
-          If the Organization makes any material change to the Agreement, it will give at least 100 (Hundred) Business
-          Days’ notice of such change to the Client. Such amendment will become effective on the date specified in the
-          notice. Unless otherwise agreed, an amendment will not affect any outstanding order or Transaction or any legal
-          rights or obligations which may already have arisen.</p>
+        <h3>Amendments to Agreement</h3>
+        <p>Assets Management Limited reserves the right to amend this Agreement at its discretion and without
+          obtaining prior consent from the Client. In the event of a material change to the Agreement, the Company
+          will provide at least 100 (One Hundred) business days’ notice before the amendment becomes effective. Such
+          amendments will be binding as of the date specified in the notice. Unless otherwise agreed, any amendment
+          will not affect any outstanding order, transaction, or any legal rights or obligations that have already
+          been established.</p>
       </div>
       <div>
-        <h4>Confidentiality</h4>
-        <p>No personal or financial information, provided by the User, will be disclosed, given, sold or exchanged to any
-          third party. In rare circumstances, if Company is required by relevant legal authority or supervisory body or
-          legislation, information(s) may be disclosed in such cases. As a general rule, the User(s) information will
-          remain in the Company's possession and will be treated as confidential at all times. It is the User's
-          responsibility to keep any account numbers and/or passwords and/or logins confidential at all times. User
-          authorizes the Company to act on any instruction received in good faith.</p>
+        <h3>Confidentiality and Data Protection</h3>
+        <p>The Company is committed to maintaining the confidentiality of all personal and financial information
+          provided by Users. Such information will not be disclosed, sold, exchanged, or provided to any third party.
+          However, the Company may disclose information in rare circumstances where required by law, regulatory
+          authority, or court order. Generally, User information will be securely maintained and treated as
+          confidential at all times. Users are responsible for safeguarding their account numbers, passwords,
+          and login details. The Company is authorized to act on instructions received in good faith.</p>
       </div>
       <div>
-        <h4>Applicable Law and Jurisdiction</h4>
-        <p>The access and use of the Website, the products and services provided through the Website, is governed by the
-          laws of United Kingdom Companies House. Without restricting the generality of the foregoing, the User may not
-          make commercial use of the contents of the Website or include the contents of the Website in or with any other
-          product that is created or distributed by the User, or copy the contents of the Website to the User's own or
-          another User Website, without obtaining the prior permission from the Company. In cases that for any reason,
-          any term and condition is deemed invalid or unenforceable, such provision will be excluded and remaining
-          provisions will remain in full force and effect. Any translation of the contents of the Website including
-          products and services provided through the Website is made as goodwill for the convenience of the User. In
-          the event of a dispute between various language versions, the English Version of the Website shall prevail.</p>
+        <h3>Applicable Law and Jurisdiction</h3>
+        <p>The access to and use of the Website, as well as the products and services provided through the Website,
+          are governed by the laws of the United Kingdom Companies House. Without limiting the generality of this
+          provision, Users may not use the content of the Website for commercial purposes, integrate it with any
+          other product or service, or reproduce it for any distribution without prior written permission from the
+          Company.</p>
+        <p>In the event that any term or condition is determined to be invalid or unenforceable, such provision
+          will be removed, and the remaining provisions will remain in full effect. Translations of the Website’s
+          content, including the services and products offered, are provided as a convenience. In the event of any
+          discrepancies between language versions, the English version will prevail.</p>
       </div>
     </dialog>
   </div>
@@ -100,21 +109,33 @@ div{
 }
 dialog {
   position: fixed;
-  top: 18vh;
-  width: 32rem;
-  height: 20rem;
+  top: 14vh;
+  width: 34rem;
+  height: 30rem;
   left: calc(50% - 17rem);
   margin: 0;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
-  border-radius: 12px;
-  padding: 1rem;
+  border-radius: 6px;
+  padding: 1.1rem;
   background-color: white;
   color: black;
   z-index: 100;
   border: none;
   animation: modal 0.3s ease-out forwards;
   overflow-y: scroll;
-  font-family: GTEestiProDisplay-Regular,serif;
+}
+
+h3{
+  margin-bottom: 5px;
+}
+
+.close{
+  margin-bottom: 5px;
+  font-weight: 900;
+}
+
+h2{
+  margin-bottom: 5px;
 }
 
 @keyframes modal {
@@ -131,10 +152,11 @@ dialog {
 @media (max-width: 500px) {
   dialog {
     top: 18vh;
-    width: 20rem;
-    height: 20rem;
-    left: unset;
+    width: 24rem;
+    height: 30rem;
     right: 30px;
+
+    left: calc(50% - 12rem);
   }
   h3{
     font-size: 20px;

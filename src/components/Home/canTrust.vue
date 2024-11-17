@@ -43,7 +43,7 @@
       </div>
 
       <div class="section-1-image">
-        <img src="https://www.bitcoin.com/static/de76dd78681ca1f97d7f0c9d6a20c4bf/114b6/hero-image.avif" alt="map-solo" class="image">
+        <img src="https://www.bitcoin.com/static/fee5b2fb5ece950a07eff2d56f9f772a/748fb/verse.webp" alt="map-solo" class="image">
       </div>
     </div>
 

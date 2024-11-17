@@ -50,7 +50,7 @@ export default {
         },
         {
           id: 2,
-          url: "https://images.ctfassets.net/1rkoumd4khui/2TmYEcnsd6VVgzF5XYOPm6/44484e5adc3162a04badff4eadfe718a/exness-home-page-banner-desktop-1.jpg?w=2560&h=1013&q=85&fm=webp",
+          url: "https://images.unsplash.com/photo-1651340981821-b519ad14da7c?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fEludmVzdCUyMGNvbmZpZGVudGx5fGVufDB8fDB8fHww",
           title: "Invest confidently by tracking and emulating the strategies of top financial leaders.",
           title2: "Participate in our mirror trading platform to engage with a diverse community of global investors," +
               " where you can exchange investment insights and strategies.",

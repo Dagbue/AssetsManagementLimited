@@ -363,7 +363,7 @@
                   name="RememberMe"
               />
               <label for="remember-me" class="checkbox-text"
-              >I Agree to Company Name
+              >I Agree to Assets Management Limited
                 <a  class="terms" @click="showDialog">Terms And Conditions</a></label
               >
             </div>
@@ -848,6 +848,11 @@ form {
   padding-left: 10px;
   text-decoration: none;
   color: #5d78ff;
+}
+
+.terms{
+  color: #5d78ff;
+  text-decoration: underline;
 }
 
 .group{

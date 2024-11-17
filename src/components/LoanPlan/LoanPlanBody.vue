@@ -34,7 +34,7 @@
             <li>register on our website</li>
             <li>Valid ID</li>
             <li>Valid Phone Number</li>
-            <li>SSN</li>
+<!--            <li>SSN</li>-->
           </ul>
         </div>
 
@@ -71,7 +71,7 @@
             <li>TIN</li>
             <li>Office address</li>
             <li>Office Utility bill</li>
-            <li>Business Owner SSN</li>
+<!--            <li>Business Owner SSN</li>-->
             <li>Business Owner Phone number</li>
           </ul>
         </div>
@@ -107,7 +107,7 @@
             <li>register on our website</li>
             <li>Valid ID</li>
             <li>Valid phone number</li>
-            <li>SSN</li>
+<!--            <li>SSN</li>-->
             <li>Utility bill</li>
           </ul>
         </div>

@@ -1,5 +1,5 @@
 <template>
-<div>
+<div style="margin-bottom: 4.5%">
 
   <div class="mapouter">
     <div class="gmap_canvas">

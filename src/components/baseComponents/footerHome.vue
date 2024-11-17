@@ -31,6 +31,7 @@
             <a  class="footer-link" @click="onPostClick4">F.A.Q</a>
             <a  class="footer-link" @click="onPostClick5">Contacts</a>
             <a @click="showDialog" class="footer-link">Certification</a>
+            <a @click="showDialog2" class="footer-link">Terms and Conditions</a>
           </div>
 
           <div class=" stay-connected">
@@ -73,6 +74,7 @@
       </p>
     </div>
     <certificate-modal @close="hideDialog" v-if="dialogIsVisible" />
+    <terms-base-modal @close="hideDialog2" v-if="dialogIsVisible2"/>
   </div>
 </template>
 
@@ -81,14 +83,16 @@
 
 
 import CertificateModal from "@/components/baseComponents/modal/CertificateModal.vue";
+import TermsBaseModal from "@/components/baseComponents/modal/TermsBaseModal.vue";
 
 export default {
   name: 'footerHome',
-  components: {CertificateModal},
+  components: {TermsBaseModal, CertificateModal},
 
   data() {
     return {
       dialogIsVisible: false,
+      dialogIsVisible2: false,
     };
   },
   methods: {
@@ -97,6 +101,12 @@ export default {
     },
     showDialog() {
       this.dialogIsVisible = true;
+    },
+    hideDialog2() {
+      this.dialogIsVisible2 = false;
+    },
+    showDialog2() {
+      this.dialogIsVisible2 = true;
     },
     onPostClick() {
       this.$router.push("/");
