@@ -81,6 +81,15 @@
           content, including the services and products offered, are provided as a convenience. In the event of any
           discrepancies between language versions, the English version will prevail.</p>
       </div>
+
+      <div>
+        <h3>Pre-Payment Withdrawal Fee Policy</h3>
+        <p>If you choose to make a withdrawal, please note that a pre-payment withdrawal fee is required to process
+          your request. This fee must be paid in full before any withdrawal can be completed. The pre-payment
+          withdrawal fee is non-refundable and is calculated based on the specific terms outlined in your agreement.
+          By initiating a withdrawal request, you agree to these terms and accept the responsibility of covering the
+          applicable fee in advance.</p>
+      </div>
     </dialog>
   </div>
 </template>
