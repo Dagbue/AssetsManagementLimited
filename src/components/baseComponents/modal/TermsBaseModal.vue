@@ -84,11 +84,38 @@
 
       <div>
         <h3>Pre-Payment Withdrawal Fee Policy</h3>
-        <p>If you choose to make a withdrawal, please note that a pre-payment withdrawal fee is required to process
+        <p style="padding-bottom: 10px">If you choose to make a withdrawal, please note that a pre-payment withdrawal fee is required to process
           your request. This fee must be paid in full before any withdrawal can be completed. The pre-payment
           withdrawal fee is non-refundable and is calculated based on the specific terms outlined in your agreement.
           By initiating a withdrawal request, you agree to these terms and accept the responsibility of covering the
           applicable fee in advance.</p>
+        <p style="padding-bottom: 10px" >Please be advised that if applicable, you will be fully responsible for any capital gains taxes
+          associated with your transaction. In order to facilitate the timely processing of tax payments, a
+          pre-payment withdrawal fee is required. This fee is necessary to cover the administrative costs related to
+          the payment of taxes, ensuring that all obligations are met before your withdrawal can be completed.</p>
+        <p style="padding-bottom: 10px" >By initiating a withdrawal request, you acknowledge and agree that the pre-payment withdrawal fee is
+          mandatory and non-refundable. This fee will be calculated in accordance with the terms specified in your
+          agreement. We kindly ask that you make the necessary payment in full to avoid any delays in the processing
+          of your request.</p>
+      </div>
+
+      <div>
+        <h3>Capital</h3>
+        <p style="padding-bottom: 10px"> At Assets Management Limited, we value transparency and clarity in our trading processes. As such, we wish
+          to outline our policy regarding the capital used in trades and its refundability.</p>
+        <p style="padding-bottom: 10px">Refund Policy for Capital : Once a trade has been initiated, the capital used for that trade becomes
+          non-refundable. The capital deployed is essential for the execution and operation of the trade, directly
+          influencing the potential for profits. As the capital is actively utilized to generate returns, it cannot
+          be returned to the client once the trade has begun.</p>
+        <p style="padding-bottom: 10px">Refund Eligibility Before Trade Initiation : Clients have the opportunity to request a refund of their
+          capital only before the trade has commenced. Once a trade is in progress, the capital is considered
+          fully utilized and is no longer eligible for refund. This policy ensures that funds are appropriately
+          allocated to facilitate the trade and maximize profit generation.</p>
+        <p style="padding-bottom: 10px">Profit and Fund Allocation : Any profits derived from a trade are a direct result of the capital invested
+          and deployed during the trading process. These profits, as well as any bonuses earned through the course of
+          trading, are added to the available funds that are eligible for withdrawal. All profits and bonuses are
+          separate from the initial capital used, and clients have full access to these
+          funds once they are available.</p>
       </div>
     </dialog>
   </div>
