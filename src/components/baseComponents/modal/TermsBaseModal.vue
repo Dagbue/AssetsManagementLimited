@@ -84,16 +84,17 @@
 
       <div>
         <h3>Pre-Payment Withdrawal Fee Policy</h3>
-        <p style="padding-bottom: 10px">If you choose to make a withdrawal, please note that a pre-payment withdrawal fee is required to process
+        <p style="padding-bottom: 10px">If you choose to make a withdrawal, please note that a pre-payment withdrawal
+          fee is required to process
           your request. This fee must be paid in full before any withdrawal can be completed. The pre-payment
           withdrawal fee is non-refundable and is calculated based on the specific terms outlined in your agreement.
-          By initiating a withdrawal request, you agree to these terms and accept the responsibility of covering the
+          By initiating a capital deposit, you agree to these terms and accept the responsibility of covering the
           applicable fee in advance.</p>
-        <p style="padding-bottom: 10px" >Please be advised that if applicable, you will be fully responsible for any capital gains taxes
-          associated with your transaction. In order to facilitate the timely processing of tax payments, a
-          pre-payment withdrawal fee is required. This fee is necessary to cover the administrative costs related to
-          the payment of taxes, ensuring that all obligations are met before your withdrawal can be completed.</p>
-        <p style="padding-bottom: 10px" >By initiating a withdrawal request, you acknowledge and agree that the pre-payment withdrawal fee is
+<!--        <p style="padding-bottom: 10px" >Please be advised that if applicable, you will be fully responsible for any capital gains taxes-->
+<!--          associated with your transaction. In order to facilitate the timely processing of tax payments, a-->
+<!--          pre-payment withdrawal fee is required. This fee is necessary to cover the administrative costs related to-->
+<!--          the payment of taxes, ensuring that all obligations are met before your withdrawal can be completed.</p>-->
+        <p style="padding-bottom: 10px" >By initiating a capital deposit, you acknowledge and agree that the pre-payment withdrawal fee is
           mandatory and non-refundable. This fee will be calculated in accordance with the terms specified in your
           agreement. We kindly ask that you make the necessary payment in full to avoid any delays in the processing
           of your request.</p>
@@ -111,10 +112,12 @@
           capital only before the trade has commenced. Once a trade is in progress, the capital is considered
           fully utilized and is no longer eligible for refund. This policy ensures that funds are appropriately
           allocated to facilitate the trade and maximize profit generation.</p>
+
         <p style="padding-bottom: 10px">Profit and Fund Allocation : Any profits derived from trades are directly
           linked to the capital invested and deployed during the trading process. The allocation and withdrawal of
           funds are subject to the following conditions: Bonuses: Bonuses earned during the trading process are free
-          to withdraw both during and after the trading period. These funds are accessible without restrictions.
+          to withdraw both during and after the trading period, However, once a profit withdrawal is initiated, bonuses
+          cannot be withdrawn until that withdrawal ticket is closed. These funds are accessible without restrictions.
           Profits: Profits generated through trading are not eligible for withdrawal until the end of the trading
           period. Profit Withdrawal Fee: Profits can only be released once the required prepayment of your withdrawal
           fee is completed. These conditions ensure a structured and transparent approach to fund allocation
