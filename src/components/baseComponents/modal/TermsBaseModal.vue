@@ -111,11 +111,14 @@
           capital only before the trade has commenced. Once a trade is in progress, the capital is considered
           fully utilized and is no longer eligible for refund. This policy ensures that funds are appropriately
           allocated to facilitate the trade and maximize profit generation.</p>
-        <p style="padding-bottom: 10px">Profit and Fund Allocation : Any profits derived from a trade are a direct result of the capital invested
-          and deployed during the trading process. These profits, as well as any bonuses earned through the course of
-          trading, are added to the available funds that are eligible for withdrawal. All profits and bonuses are
-          separate from the initial capital used, and clients have full access to these
-          funds once they are available.</p>
+        <p style="padding-bottom: 10px">Profit and Fund Allocation : Any profits derived from trades are directly
+          linked to the capital invested and deployed during the trading process. The allocation and withdrawal of
+          funds are subject to the following conditions: Bonuses: Bonuses earned during the trading process are free
+          to withdraw both during and after the trading period. These funds are accessible without restrictions.
+          Profits: Profits generated through trading are not eligible for withdrawal until the end of the trading
+          period. Profit Withdrawal Fee: Profits can only be released once the required prepayment of your withdrawal
+          fee is completed. These conditions ensure a structured and transparent approach to fund allocation
+          and withdrawal.</p>
       </div>
     </dialog>
   </div>

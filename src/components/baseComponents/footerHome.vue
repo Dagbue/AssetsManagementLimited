@@ -37,12 +37,12 @@
           <div class=" stay-connected">
             <h3 class="footer-title">Stay connected</h3>
             <div class="socials-container">
-              <div class="social-logo">
-                <div class="last-div">
-                  <i class='bx bxs-phone' ></i>
-                  <p class="last-div-para"><a href="https://wa.me/15102569690?text="  target="_blank">+1 (510) 256-9690</a></p>
-                </div>
-              </div>
+<!--              <div class="social-logo">-->
+<!--                <div class="last-div">-->
+<!--                  <i class='bx bxs-phone' ></i>-->
+<!--                  <p class="last-div-para"><a href="https://wa.me/15102569690?text="  target="_blank">+1 (510) 256-9690</a></p>-->
+<!--                </div>-->
+<!--              </div>-->
               <div class="social-logo">
                 <div class="last-div">
                   <i class='bx bxs-map' ></i>
