@@ -17,6 +17,9 @@
               <a style="color: rgba(219,101,123,0.6);" href="mailto:support@assetsmanagementlimited.com" class="para-last">support@assetsmanagementlimited.com</a>
             </span> for documentation and to boost the funding process
           </p>
+          <p class="text-3">Please Note: Payments should be made only to the address provided below. Do not remit
+            any payments to wallet addresses shared by agents. If you receive such requests, kindly report them
+            immediately through our official support channels.</p>
           <br/>
           <div v-if="this.selectedItem === 'Bitcoin' ">
             <p class="text-4">Wallet Name: {{selectedItem}}</p>
@@ -138,6 +141,7 @@ export default {
   height: 100vh;
   z-index: 10;
   background-color: rgba(0, 0, 0, 0.7);
+
 }
 
 
@@ -157,12 +161,11 @@ dialog {
 .alpha{
   position: relative;
   display: block;
-  overflow: hidden;
   width: 420px;
-  height: 630px;
+  height: 660px;
   /*height: auto;*/
   padding: 24px;
-
+  overflow: scroll;
   border-radius: 5px;
   background-color: #0f171c;
   border: 0.5px solid #3C4A57FF;
@@ -200,8 +203,8 @@ dialog {
 
 .text-3{
   font-weight: 400;
-  font-size: 16px;
-  line-height: 24px;
+  font-size: 15px;
+  line-height: 20px;
   color: #ffffff;
   padding-top: 1.5%;
   padding-bottom: 2%;
