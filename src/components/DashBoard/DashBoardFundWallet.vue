@@ -178,7 +178,7 @@ export default {
   data() {
     return {
       model: new DepositRequest().createDeposit,
-      dialogIsVisible: false,
+      dialogIsVisible: true,
       btcBalance: "",
       depositMethod: "",
       selectedItem: null,

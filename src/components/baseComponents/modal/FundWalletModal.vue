@@ -17,9 +17,10 @@
               <a style="color: rgba(219,101,123,0.6);" href="mailto:support@assetsmanagementlimited.com" class="para-last">support@assetsmanagementlimited.com</a>
             </span> for documentation and to boost the funding process
           </p>
-          <p class="text-3">Please Note: Payments should be made only to the address provided below. Do not remit
-            any payments to wallet addresses shared by agents. If you receive such requests, kindly report them
-            immediately through our official support channels.</p>
+          <p class="text-3">⚠️ <span style="color: rgba(219,101,123,0.6);" > Warning : PAYMENTS SHOULD BE MADE ONLY TO THE ADDRESS PROVIDED BELOW. DO NOT SEND
+            PAYMENTS TO WALLET ADDRESSES SHARED BY AGENTS. IF YOU RECEIVE SUCH REQUESTS, CONFIRM THE WALLET ADDRESS
+            MATCHES THE ONE BELOW. IF NOT, STOP THE TRANSACTION IMMEDIATELY AND REPORT THEM TO ANY OF OUR OFFICIAL
+            SUPPORT CHANNELS.</span></p>
           <br/>
           <div v-if="this.selectedItem === 'Bitcoin' ">
             <p class="text-4">Wallet Name: {{selectedItem}}</p>
