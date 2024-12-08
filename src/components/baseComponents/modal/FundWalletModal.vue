@@ -14,10 +14,10 @@
           <p class="text-3">Transfer desired amount to the details displayed below and have your balance funded</p>
           <p class="text-3">Note: After making your deposit,kindly send a screenshot/proof of deposit to
             <span class="note-span">
-              <a style="color: rgba(219,101,123,0.6);" href="mailto:support@assetsmanagementlimited.com" class="para-last">support@assetsmanagementlimited.com</a>
+              <a style="color: #5d78ff;" href="mailto:support@assetsmanagementlimited.com" class="para-last">support@assetsmanagementlimited.com</a>
             </span> for documentation and to boost the funding process
           </p>
-          <p class="text-3">⚠️ <span style="color: rgba(219,101,123,0.6);" > Warning : PAYMENTS SHOULD BE MADE ONLY TO THE ADDRESS PROVIDED BELOW. DO NOT SEND
+          <p class="text-6">⚠️ <span style="color: rgba(219,101,123,0.6);" > Warning : PAYMENTS SHOULD BE MADE ONLY TO THE ADDRESS PROVIDED BELOW. DO NOT SEND
             PAYMENTS TO WALLET ADDRESSES SHARED BY AGENTS. IF YOU RECEIVE SUCH REQUESTS, CONFIRM THE WALLET ADDRESS
             MATCHES THE ONE BELOW. IF NOT, STOP THE TRANSACTION IMMEDIATELY AND REPORT THEM TO ANY OF OUR OFFICIAL
             SUPPORT CHANNELS.</span></p>
@@ -228,6 +228,15 @@ dialog {
   padding-top: 2%;
   padding-bottom: 2%;
   word-wrap: break-word; /* or overflow-wrap: break-word; */
+}
+
+.text-6{
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: #ffffff;
+  padding-top: 1.5%;
+  padding-bottom: 1.5%;
 }
 
 button{
